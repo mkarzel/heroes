@@ -28,12 +28,45 @@
 }
 
 .form{
-    font-family: 'Open Sans', sans-serif;
-    color: black;
-    margin-top: 60px;
-    margin-bottom: 60px;
-
+	font-family: 'Open Sans', sans-serif;
+	width: 500px;
+	padding: 30px;
+	background: #FFFFFF;
+	margin: 50px auto;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22); 
+	-moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22); 
+	-webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
 }
+
+.form input[type="text"],
+.form input[type="date"],
+.form input[type="datetime"],
+.form input[type="email"],
+.form input[type="number"],
+.form input[type="search"],
+.form input[type="time"],
+.form input[type="url"],
+.form input[type="password"],
+/* .form textarea, */
+.form select 
+{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	outline: none;
+	display: block;
+	width: 100%;
+	border: none;
+	border-bottom: 1px solid rgba(160, 145, 145, 0.651);
+	background: transparent;
+	margin-bottom: 10px;
+    height: 45px;
+}
+
+/* .form textarea{
+	resize:none;
+    overflow: hidden;
+} */
 
 .footer{
     background-color: rgb(38, 29, 82);
@@ -49,6 +82,11 @@
     margin-right: auto;
 }
 
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(177, 172, 172);
+    opacity: 1; /* Firefox */
+  }
+
 .button-submit{
     background-color: rgb(95, 146, 201);
     border: none;
@@ -58,6 +96,7 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
+    cursor: pointer;
     font-size: 16px;
     margin-top: 60px;
 }
