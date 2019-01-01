@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
+    <script src="scripts.js"></script>
     <meta charset="UTF-8">
     <title>HEROES</title>
 </head>
@@ -13,41 +14,70 @@
         <a href="index.html">
             <img src="./images/logo.png" align="left">
         </a>
-        <p><a href="form.html">DODAJ HEROSA</a> | <a href="">EDYTUJ HEROSA</a> | <a href="">USUŃ HEROSA</a> | <a href="">WYCZYŚĆ BAZĘ</a> | <a href="">WCZYTAJ HEROSÓW</a></p>
+        <p><a href="form.html">DODAJ HEROSA</a> | <a href="">EDYTUJ HEROSA</a> | <a href="">USUŃ HEROSA</a> | <a href="">WYCZYŚĆ
+                BAZĘ</a> | <a href="">WCZYTAJ HEROSÓW</a></p>
     </div>
     <div class="heroes">
         <div class="hero">
-            <img src="./images/superman.jpg" width="250px" height="400px">
+            <img class="clickable-img" src="./images/superman.jpg" width="250px" height="350px" id="myHero">
             <p class="thick">Superman</p>
             <p class="normal">Cena wynajmu 3500 zł/h</p>
         </div>
         <div class="hero">
-            <img src="./images/hulk.jpg" width="250px" height="400px">
+            <img class="clickable-img" src="./images/hulk.jpg" width="250px" height="350px">
             <p class="thick">Hulk</p>
             <p class="normal">Cena wynajmu 25000 zł/h</p>
         </div>
         <div class="hero">
-            <img src="./images/thor.jpg" width="250px" height="400px">
+            <img class="clickable-img" src="./images/thor.jpg" width="250px" height="350px">
             <p class="thick">Thor</p>
             <p class="normal">Cena wynajmu 55000 zł/h</p>
         </div>
         <div class="hero">
-            <img src="./images/ironman.jpg" width="250px" height="400px">
+            <img class="clickable-img" src="./images/ironman.jpg" width="250px" height="350px">
             <p class="thick">Ironman</p>
             <p class="normal">Cena wynajmu 75000 zł/h</p>
         </div>
         <div class="hero">
-            <img src="./images/potter.jpg" width="250px" height="400px">
+            <img class="clickable-img" src="./images/potter.jpg" width="250px" height="350px">
             <p class="thick">Potter</p>
             <p class="normal">Cena wynajmu 125000 zł/h</p>
         </div>
-        <div class="hero">
-            <img src="./images/batman.jpg" width="250px" height="400px">
+        <div class="hero" class="hero">
+            <img class="clickable-img" src="./images/batman.jpg" width="250px" height="350px">
             <p class="thick">Batman</p>
             <p class="normal">Cena wynajmu 2000 zł/h</p>
         </div>
     </div>
+
+    <!-- Hero modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-pic"> 
+                <img src="./images/superman.jpg" width="400px" height="400px">
+            </div>
+            <div class="modal-right">
+                <div class="modal-title">
+                    <p class="basket-header">I'M SUPERMAN</p>
+                </div>
+                <div class="modal-title-border"></div>
+                <div class="modal-description">
+                    <p class="basket-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id dolor ipsum. Duis porttitor, nisl in laoreet gravida, lorem ipsum dapibus massa, ac vestibulum urna tortor quis libero. Vivamus id lacus metus. Integer a tortor fringilla, scelerisque tellus ut, sagittis velit. Sed at imperdiet lacus. Nulla facilisi. Donec sed euismod nulla. Donec tempor dolor ex, vitae vestibulum lectus dignissim eu. </p>
+                </div>
+                <div class="modal-price">
+                    <p class="basket-price">WYNAJEM: 3 500 ZŁ/H<p>
+                </div>
+                <div id="buttonBasket">
+                    <button id="buttonBasket" class="basket-button">DODAJ DO KOSZYKA</button>
+                </div>
+            </div>            
+            <span class="close">&times;</span>
+        </div>
+
+    </div>
 </body>
+
 <footer class="footer">
     <h4>Need a Hero - Pure JS/CSS Aplikacja do ćwiczenia nabytej wiedzy o JavaScript</h4>
 </footer>
