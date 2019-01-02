@@ -14,37 +14,67 @@
         <a href="index.html">
             <img src="./images/logo.png" align="left">
         </a>
-        <p><a href="form.html">DODAJ HEROSA</a> | <a href="">EDYTUJ HEROSA</a> | <a href="">USUŃ HEROSA</a> | <a href="">WYCZYŚĆ
-                BAZĘ</a> | <a href="">WCZYTAJ HEROSÓW</a></p>
+        <p><a href="form.html">DODAJ HEROSA</a> | <a href="">EDYTUJ HEROSA</a> | <a href="">USUŃ HEROSA</a> | <a href="">WYCZYŚĆ BAZĘ</a> | <a href="">WCZYTAJ HEROSÓW</a></p>
+    </div>
+    <div class="basket">
+        <div class="basket-header">
+            <div><p class="basket-font">Koszyk</p></div>
+            <div class="basket-price">
+                <div><p class="basket-font">Do zapłaty: </p></div>
+                <div><p class="basket-price-font">0 zł</p></div>
+            </div>
+        </div>
+        <div class="basket-header-border"></div>
+        <div class="basket-empty">
+            <p>Twój koszyk jest pusty</p>
+        </div>
+        <div class="basket-content">
+            <div class="basket-item">
+                <div>
+                    <img class="basket-item-pic" src="./images/superman.jpg">
+                </div>
+                <div class="basket-right">
+                    <div class="basket-item-header">
+                        <p>SUPERMAN</p>
+                    </div>
+                    <div class="basket-item-description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id dolor ipsum. Duis porttitor, nisl in laoreet gravida, lorem ipsum dapibus massa, ac vestibulum urna tortor quis libero. Vivamus id lacus metus. Integer a tortor fringilla, scelerisque tellus ut, sagittis velit. Sed at imperdiet lacus. Nulla facilisi. Donec sed euismod nulla. Donec tempor dolor ex, vitae vestibulum lectus dignissim eu. </p>
+                    </div>
+                    <div>
+                        <button class="basket-item-button">USUŃ Z KOSZYKA | &times;</button> 
+                    </div>                    
+                </div>                    
+            </div>       
+        </div>
     </div>
     <div class="heroes">
         <div class="hero">
-            <img class="clickable-img" src="./images/superman.jpg" width="250px" height="350px" id="myHero">
+            <img class="clickable-img" src="./images/superman.jpg" id="myHero">
             <p class="thick">Superman</p>
             <p class="normal">Cena wynajmu 3500 zł/h</p>
         </div>
         <div class="hero">
-            <img class="clickable-img" src="./images/hulk.jpg" width="250px" height="350px">
+            <img class="clickable-img" src="./images/hulk.jpg">
             <p class="thick">Hulk</p>
             <p class="normal">Cena wynajmu 25000 zł/h</p>
         </div>
         <div class="hero">
-            <img class="clickable-img" src="./images/thor.jpg" width="250px" height="350px">
+            <img class="clickable-img" src="./images/thor.jpg">
             <p class="thick">Thor</p>
             <p class="normal">Cena wynajmu 55000 zł/h</p>
         </div>
         <div class="hero">
-            <img class="clickable-img" src="./images/ironman.jpg" width="250px" height="350px">
+            <img class="clickable-img" src="./images/ironman.jpg">
             <p class="thick">Ironman</p>
             <p class="normal">Cena wynajmu 75000 zł/h</p>
         </div>
         <div class="hero">
-            <img class="clickable-img" src="./images/potter.jpg" width="250px" height="350px">
+            <img class="clickable-img" src="./images/potter.jpg">
             <p class="thick">Potter</p>
             <p class="normal">Cena wynajmu 125000 zł/h</p>
         </div>
         <div class="hero" class="hero">
-            <img class="clickable-img" src="./images/batman.jpg" width="250px" height="350px">
+            <img class="clickable-img" src="./images/batman.jpg">
             <p class="thick">Batman</p>
             <p class="normal">Cena wynajmu 2000 zł/h</p>
         </div>
@@ -59,22 +89,21 @@
             </div>
             <div class="modal-right">
                 <div class="modal-title">
-                    <p class="basket-header">I'M SUPERMAN</p>
+                    <p>I'M SUPERMAN</p>
                 </div>
                 <div class="modal-title-border"></div>
                 <div class="modal-description">
-                    <p class="basket-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id dolor ipsum. Duis porttitor, nisl in laoreet gravida, lorem ipsum dapibus massa, ac vestibulum urna tortor quis libero. Vivamus id lacus metus. Integer a tortor fringilla, scelerisque tellus ut, sagittis velit. Sed at imperdiet lacus. Nulla facilisi. Donec sed euismod nulla. Donec tempor dolor ex, vitae vestibulum lectus dignissim eu. </p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id dolor ipsum. Duis porttitor, nisl in laoreet gravida, lorem ipsum dapibus massa, ac vestibulum urna tortor quis libero. Vivamus id lacus metus. Integer a tortor fringilla, scelerisque tellus ut, sagittis velit. Sed at imperdiet lacus. Nulla facilisi. Donec sed euismod nulla. Donec tempor dolor ex, vitae vestibulum lectus dignissim eu. </p>
                 </div>
                 <div class="modal-price">
-                    <p class="basket-price">WYNAJEM: 3 500 ZŁ/H<p>
+                    <p>WYNAJEM: 3 500 ZŁ/H<p>
                 </div>
-                <div id="buttonBasket">
-                    <button id="buttonBasket" class="basket-button">DODAJ DO KOSZYKA</button>
+                <div id="buttonModal">
+                    <button id="buttonModal" class="modal-button">DODAJ DO KOSZYKA</button>
                 </div>
             </div>            
             <span class="close">&times;</span>
         </div>
-
     </div>
 </body>
 

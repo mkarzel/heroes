@@ -9,7 +9,7 @@ window.onload = function () {
     // Get the <span> element that closes the modal
     const span = document.getElementsByClassName("close")[0];
 
-    let buttonBasket = document.getElementById("buttonBasket");
+    let buttonModal = document.getElementById("buttonModal");
 
     // When the user clicks the button, open the modal 
     hero.onclick = function () {
@@ -22,7 +22,7 @@ window.onload = function () {
     }
 
     // When the user clicks on the button, close the modal
-    buttonBasket.onclick = function () {
+    buttonModal.onclick = function () {
         modal.style.display = "none";
     }
 
