@@ -175,7 +175,7 @@ displayHeroDetails = function () {
     '<div id="myModal" class="modal">\
         <div class="modal-content">\
             <div class="modal-pic"> \
-                <img src="'+heroShown.image+'" width="400px" height="400px">\
+                <img src="'+heroShown.image+'" class="modal-pic-size">\
             </div>\
             <div class="modal-right">\
                 <div class="modal-title">\
