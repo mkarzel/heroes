@@ -1,12 +1,13 @@
 /* MAIN PAGE */
 .banner{
     background-image: url("./images/home-slide01.jpg");
-    max-width: 1854px;
+    max-width: 2000px;
     min-height: 850px;
     width: 100%;
     font-family: 'Open Sans', sans-serif;
     color: white;
     text-align: right;
+    background-size: cover; 
     align-content: center;
     margin-left: auto;
     margin-right: auto;
@@ -21,7 +22,8 @@
 .basket{
     border: 1px solid rgb(15, 10, 90);
     width: 80%;
-    max-width: 1854px;
+    max-width: 2000px;
+    margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
     justify-content: space-between;
@@ -73,8 +75,8 @@
     margin-top: 10px;
     margin-left: 10px;
     margin-bottom: 10px;
-    max-height: 200px;
-    max-width: 150px;
+    height: 150px;
+    width: 150px;
 }
 
 .basket-item-header{
@@ -88,7 +90,7 @@
 }
 
 .basket-item-description{
-    font-size: 5pt;
+    font-size: 6pt;
     font-weight: bold;
     color: gray;
     margin-top: -10px;
@@ -124,7 +126,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1854px;
+    max-width: 2000px;
     width: 80%;
     flex-wrap: wrap;
     flex-grow: inherit;
@@ -171,10 +173,11 @@
 /* The Close Button */
 .close {
     color: #929292;
-    float: right;
+    position: absolute;
     font-size: 35px;
     font-weight: bold;
-    margin-top: -15px;
+    right: 10px;
+    top: 0;
 }
 
 .close:hover,
@@ -188,6 +191,7 @@
     margin-left: 40px;
     margin-right: 40px;
     margin-top: -10px;
+    width: 100%;
 }
 
 .modal-pic{
@@ -249,7 +253,7 @@
 /* FORM */
 .form-banner{
     background-image: url("./images/home-slide01.jpg");
-    max-width: 1854px;
+    max-width: 2000px;
     width: 100%;
     height: 100px;
     background-size: cover;
@@ -319,7 +323,7 @@
 .footer{
     background-color: rgb(38, 29, 82);
     height: 60px;
-    max-width: 1854px;
+    max-width: 2000px;
     background-size: cover;
     font-family: 'Open Sans', sans-serif;
     color: white;
