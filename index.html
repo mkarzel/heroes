@@ -11,26 +11,54 @@
 
 <body>
     <div class="banner">
-        <a href="index.html">
-            <img class="logo" src="./images/logo.png" align="left">
-        </a>
-        <p class="menu"><a href="form.html">DODAJ HEROSA</a> | <a href="">EDYTUJ HEROSA</a> | <a href="">USUŃ HEROSA</a> | <a href="">WYCZYŚĆ BAZĘ</a> | <a href="">WCZYTAJ HEROSÓW</a></p>
+        <div>
+            <a href="index.html">
+                <img class="logo" src="./images/logo.png" align="left">
+            </a>
+        </div>
+        <p class="menu"><a href="form.html">DODAJ HEROSA</a> | <a href="">EDYTUJ HEROSA</a> | <a href="">USUŃ HEROSA</a>
+            | <a href="">WYCZYŚĆ BAZĘ</a> | <a href="">WCZYTAJ HEROSÓW</a></p>
+        <div class="hamburger-menu">
+            <header>
+                <a href="#main-menu">
+                    <button class="hamburger-button-open">MENU</button>
+                </a>
+                <nav id="main-menu" class="main-menu" role="navigation">
+                    <a href="" class="menu-close" role="button">
+                        <button class="hamburger-button-close">CLOSE</button>
+                    </a>
+                    <ul>
+                        <li><a href="form.html">DODAJ HEROSA</a></li>
+                        <li><a href="">EDYTUJ HEROSA</a></li>
+                        <li><a href="">USUŃ HEROSA</a></li>
+                        <li><a href="">WYCZYŚĆ BAZĘ</a></li>
+                        <li><a href="">WCZYTAJ HEROSÓW</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
     </div>
     <div>
-    <div class="basket">
-        <div class="basket-header">
-            <div><p class="basket-font">Koszyk</p></div>
-            <div class="basket-price">
-                <div><p class="basket-font">Do zapłaty: </p></div>
-                <div><p class="basket-price-font">0 zł</p></div>
+        <div class="basket">
+            <div class="basket-header">
+                <div>
+                    <p class="basket-font">Koszyk</p>
+                </div>
+                <div class="basket-price">
+                    <div>
+                        <p class="basket-font">Do zapłaty: </p>
+                    </div>
+                    <div>
+                        <p class="basket-price-font">0 zł</p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="basket-header-border"></div>
-        <!-- <div class="basket-empty">
+            <div class="basket-header-border"></div>
+            <!-- <div class="basket-empty">
             <p>Twój koszyk jest pusty</p>
         </div> -->
-        <div id="basket-content" class="basket-content">
-            <!-- <div class="basket-item">
+            <div id="basket-content" class="basket-content">
+                <!-- <div class="basket-item">
                 <div>
                     <img class="basket-item-pic" src="./images/superman.jpg">
                 </div>
@@ -46,10 +74,10 @@
                     </div>                    
                 </div>                    
             </div>        -->
+            </div>
         </div>
-    </div>
-    <div class="heroes" id="heroes">
-        <!-- <div class="hero" id="superman">
+        <div class="heroes" id="heroes">
+            <!-- <div class="hero" id="superman">
             <img src="./images/superman.jpg" id="myHero">
             <p class="thick">Superman</p> 
             <p class="normal">Cena wynajmu 3500 zł/h</p>
@@ -79,8 +107,8 @@
             <p class="thick">Batman</p>
             <p class="normal">Cena wynajmu 2000 zł/h</p>
         </div> -->
+        </div>
     </div>
-</div>
 
     <!-- Hero modal -->
     <div id="heroWindow">

@@ -1,11 +1,12 @@
 /* MAIN PAGE */
 
 @media screen and (min-width: 1025px){
+
     .banner{
         background-image: url("./images/home-slide01.jpg");
         max-width: 2000px;
         width: 100%;
-        min-height: 520px;
+        min-height: 870px;
         height: auto;
         color: white;
         text-align: right;
@@ -17,8 +18,30 @@
         background-size: cover; 
     }
 
+    @media screen and (min-width: 1025px) and (max-width: 1500px){
+        .banner{
+            background-image: url("./images/home-slide01.jpg");
+            max-width: 2000px;
+            width: 100%;
+            min-height: 500px;
+            height: auto;
+            color: white;
+            text-align: right;
+            background-size: cover; 
+            align-content: center;
+            margin-left: auto;
+            margin-right: auto;
+            background-repeat: no-repeat;
+            background-size: cover; 
+        }
+    }
+
     .logo{
         max-width: 250px;
+    }
+
+    div.hamburger-menu{
+        display:none;
     }
 
     /* BASKET */
@@ -279,9 +302,10 @@
     }
 
     .form{
-        width: 600px;
+        width: 40%;
         height: 100%;
         padding: 50px;
+        max-width: 1600px;
         background: #FFFFFF;
         margin: 100px auto;
         box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22); 
@@ -376,7 +400,7 @@
         background-image: url("./images/home-slide01.jpg"); 
         max-width: 1026px;
         width: 100%;
-        min-height: 200px;
+        min-height: 350px;
         height: auto;
         color: white;
         text-align: right;
@@ -393,6 +417,10 @@
 
     .logo{
         max-width: 150px;
+    }
+
+    div.hamburger-menu{
+        display:none;
     }
 
     /* BASKET */
@@ -640,7 +668,7 @@
         background-image: url("./images/home-slide01.jpg");
         max-width: 2000px;
         width: 100%;
-        height: 100px;
+        height: 75px;
         background-size: cover;
         color: white;
         text-align: right;
@@ -650,11 +678,11 @@
     }
 
     .form{
-        width: 600px;
-        height: 100%;
-        padding: 50px;
+        width: 60%;
+        height: 80%;
+        padding: 20px;
         background: #FFFFFF;
-        margin: 100px auto;
+        margin: 30px auto;
         box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22); 
         -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22); 
         -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
@@ -680,22 +708,22 @@
         border: none;
         border-bottom: 1px solid rgba(160, 145, 145, 0.651);
         background: transparent;
-        margin-top: 30px;
-        margin-bottom: 30px;
-        height: 45px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        height: 35px;
     }
 
     .button-form{
         background-color: rgb(95, 146, 201);
         border: none;
         color: white;
-        padding: 12px 42px;
+        padding: 8px 28px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
         cursor: pointer;
         font-size: 16px;
-        margin-top: 60px;
+        margin-top: 20px;
     }
 
     .button-form:hover{
@@ -747,7 +775,7 @@
         background-image: url("./images/home-slide01.jpg"); 
         max-width: 1024px;
         width: 100%;
-        min-height: 520px;
+        min-height: 300px;
         height: auto;
         color: white;
         text-align: right;
@@ -755,11 +783,7 @@
         align-content: center;
         margin-left: auto;
         margin-right: auto;
-        /* -webkit-background-size: contain;
-        -moz-background-size: contain;
-        -o-background-size: contain;
-        background-repeat: no-repeat;
-        background-size: contain; */
+        display: block;
     }
 
     .logo{
@@ -1005,7 +1029,7 @@
         background-image: url("./images/home-slide01.jpg");
         max-width: 2000px;
         width: 100%;
-        height: 100px;
+        height: 50px;
         background-size: cover;
         color: white;
         text-align: right;
@@ -1015,11 +1039,11 @@
     }
 
     .form{
-        width: 600px;
+        width: 60%;
         height: 100%;
-        padding: 50px;
+        padding: 10px;
         background: #FFFFFF;
-        margin: 100px auto;
+        margin: 20px auto;
         box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22); 
         -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22); 
         -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
@@ -1045,22 +1069,22 @@
         border: none;
         border-bottom: 1px solid rgba(160, 145, 145, 0.651);
         background: transparent;
-        margin-top: 30px;
-        margin-bottom: 30px;
-        height: 45px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        height: 25px;
     }
 
     .button-form{
         background-color: rgb(95, 146, 201);
         border: none;
         color: white;
-        padding: 12px 42px;
+        padding: 4px 14px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
         cursor: pointer;
         font-size: 16px;
-        margin-top: 60px;
+        margin-top: 20px;
     }
 
     .button-form:hover{
@@ -1098,8 +1122,113 @@
     }
 
     p.menu{
-        font-size: 1pt;
+        font-size: 0pt;
     }
+
+    /* HAMBURGER */
+
+  .main-menu {
+    position: absolute;
+    left: -200px;
+    top: 0;
+    height: auto;
+    transition: left 0.3s ease,
+                box-shadow 0.3s ease;
+    z-index: 999;
+  }
+  
+  .main-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 2.5em 0 0;
+    /* Hide shadow w/ -8px while 'closed' */
+    -webkit-box-shadow: -8px 0 8px rgba(0,0,0,.5);
+       -moz-box-shadow: -8px 0 8px rgba(0,0,0,.5);
+            box-shadow: -8px 0 8px rgba(0,0,0,.5);
+    min-height: 100%;
+    width: 200px;
+    background: #1a1a1a;
+  }
+  
+  .main-menu a {
+    display: block;
+    padding: .75em 15px;
+    line-height: 1em;
+    font-size: 8pt;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid #383838;
+  }
+
+  .main-menu .menu-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  .main-menu:target,
+  .main-menu[aria-expanded="true"] {
+    left: 0;
+    outline: none;
+    -moz-box-shadow: 3px 0 12px rgba(0,0,0,.25);
+    -webkit-box-shadow: 3px 0 12px rgba(0,0,0,.25);
+    box-shadow: 3px 0 12px rgba(0,0,0,.25);
+  }
+  
+  .main-menu:target .menu-close,
+  .main-menu[aria-expanded="true"] .menu-close {
+    z-index: 1001;
+  }
+  
+  .main-menu:target ul,
+  .main-menu[aria-expanded="true"] ul {
+    position: relative;
+    z-index: 1000;
+  }
+  
+  .main-menu:target + .backdrop,
+  .main-menu[aria-expanded="true"] + .backdrop {
+    position: absolute;
+    display: block;  
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 998;
+    background: #000;
+    background: rgba(0,0,0,.85);
+    cursor: default;
+  }
+
+  .hamburger-button-close{
+    background-color:red;
+    border: none;
+    color: white;
+    padding: 3px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .hamburger-button-open{
+    background-color:rgb(0, 0, 0);
+    border: none;
+    color: white;
+    padding: 5px 42px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+    font-size: 14px;
+    left: 0;
+  }
+
+  .hamburger-button-open:hover{
+    background-color: rgb(24, 27, 26);
+  }
 
 }
 
