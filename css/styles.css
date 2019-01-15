@@ -1,4 +1,339 @@
-body {
-  background-color: red; }
-  body p {
-    background-color: blue; }
+.banner {
+  background-image: url("./images/home-slide01.jpg");
+  max-width: 2000px;
+  width: 100%;
+  min-height: 870px;
+  height: auto;
+  color: white;
+  text-align: right;
+  background-size: cover;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  background-repeat: no-repeat;
+  background-size: cover; }
+  @media screen and (min-width: 1025px) and (max-width: 1500px) {
+    .banner {
+      min-height: 500px; } }
+  @media screen and (min-width: 761px) and (max-width: 1025px) {
+    .banner {
+      min-height: 350px; } }
+  @media screen and (max-width: 760px) {
+    .banner {
+      min-height: 300px;
+      display: block; } }
+  .banner__logo {
+    max-width: 250px; }
+    @media screen and (max-width: 1025px) {
+      .banner__logo {
+        max-width: 150px; } }
+  .banner__form {
+    background-image: url("./images/home-slide01.jpg");
+    max-width: 2000px;
+    width: 100%;
+    height: 100px;
+    background-size: cover;
+    color: white;
+    text-align: right;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto; }
+    @media screen and (min-width: 761px) and (max-width: 1025px) {
+      .banner__form {
+        height: 75px; } }
+    @media screen and (max-width: 760px) {
+      .banner__form {
+        height: 50px; } }
+
+@media screen and (min-width: 760px) {
+  div.hamburgerMenu {
+    display: none; } }
+
+.basket {
+  border: 1px solid #0f0a5a;
+  width: 80%;
+  max-width: 1600px;
+  min-width: 900px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between; }
+  @media screen and (min-width: 761px) and (max-width: 1025px) {
+    .basket {
+      max-width: 1026px;
+      min-width: none; } }
+  @media screen and (max-width: 760px) {
+    .basket {
+      max-width: 760px;
+      min-width: none; } }
+  .basket__header {
+    font-size: 22pt;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px; }
+    @media screen and (min-width: 761px) and (max-width: 1025px) {
+      .basket__header {
+        font-size: 15pt; } }
+    @media screen and (max-width: 760px) {
+      .basket__header {
+        font-size: 14pt; } }
+  .basket__headerBorder {
+    border-bottom: 1px solid rgba(100, 97, 97, 0.651);
+    margin-left: 10px;
+    margin-bottom: 20px;
+    width: 20%; }
+  .basket__empty {
+    font-size: 14pt;
+    color: #c9c1c1;
+    text-align: center; }
+  .basket__price {
+    display: flex; }
+  .basket__content {
+    display: flex;
+    flex-wrap: wrap; }
+  .basket__item {
+    display: flex;
+    width: 33%; }
+    @media screen and (min-width: 761px) and (max-width: 1025px) {
+      .basket__item {
+        width: 50%; } }
+    @media screen and (max-width: 760px) {
+      .basket__item {
+        justify-items: center;
+        width: 100%; } }
+  .basket__right {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: -10px; }
+  .basket__itemPic {
+    bottom: 0;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    height: 150px;
+    width: 150px; }
+  .basket__itemHeader {
+    padding-bottom: 0;
+    margin-top: 0px;
+    margin-bottom: 0;
+    margin-left: 10px;
+    font-size: 14pt;
+    font-weight: bold;
+    color: gray; }
+    @media screen and (max-width: 1025px) {
+      .basket__itemHeader {
+        font-size: 12pt; } }
+  .basket__itemDescription {
+    font-size: 8pt;
+    font-weight: bold;
+    color: gray;
+    margin-top: -10px;
+    margin-bottom: 0;
+    margin-left: 10px; }
+    @media screen and (max-width: 1025px) {
+      .basket__itemDescription {
+        font-size: 6pt; } }
+  .basket__itemButton {
+    background-color: #c03131;
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 8px;
+    margin-left: 10px; }
+    @media screen and (max-width: 1025px) {
+      .basket__itemButton {
+        padding: 6px 12px; } }
+  .basket__priceFont {
+    color: red;
+    margin-left: 5px;
+    margin-right: 10px; }
+
+.heroes {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1600px;
+  min-width: 900px;
+  width: 80%;
+  flex-wrap: wrap;
+  flex-grow: inherit; }
+  @media screen and (min-width: 761px) and (max-width: 1025px) {
+    .heroes {
+      max-width: 2000px; } }
+  @media screen and (max-width: 760px) {
+    .heroes {
+      max-width: 760px; } }
+
+.hero {
+  margin-bottom: 15px;
+  text-align: center;
+  min-width: 33%; }
+  @media screen and (min-width: 761px) and (max-width: 1025px) {
+    .hero {
+      min-width: 50%; } }
+  @media screen and (max-width: 760px) {
+    .hero {
+      min-width: 100%; } }
+
+.clickableImg {
+  cursor: pointer;
+  width: 250px;
+  height: 350px; }
+  @media screen and (min-width: 761px) and (max-width: 1025px) {
+    .clickableImg {
+      width: 150px;
+      height: 200px; } }
+  @media screen and (max-width: 760px) {
+    .clickableImg {
+      width: 100px;
+      height: 150px; } }
+
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.8);
+  /* Black w/ opacity */ }
+  .modal__content {
+    display: flex;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: #fefefe;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid #888;
+    width: 60%;
+    max-width: 1000px; }
+  .modal__close {
+    color: #929292;
+    position: absolute;
+    font-size: 35px;
+    font-weight: bold;
+    right: 10px;
+    top: 0; }
+    @media screen and (max-width: 760px) {
+      .modal__close {
+        font-size: 12px; } }
+    .modal__close:hover, .modal__close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer; }
+  .modal__right {
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: -10px;
+    width: 100%; }
+    @media screen and (max-width: 760px) {
+      .modal__right {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: -10px; } }
+  .modal__Pic {
+    bottom: 0;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px; }
+    @media screen and (max-width: 760px) {
+      .modal__Pic {
+        margin-top: 0;
+        margin-left: 0;
+        margin-bottom: 0; } }
+    .modal__Pic--size {
+      width: 300px;
+      height: 300px; }
+      @media screen and (min-width: 761px) and (max-width: 1025px) {
+        .modal__Pic--size {
+          width: 200px;
+          height: 200px; } }
+      @media screen and (max-width: 760px) {
+        .modal__Pic--size {
+          width: 100px;
+          height: 100px; } }
+  .modal__title {
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 18pt;
+    font-weight: bold; }
+    @media screen and (min-width: 761px) and (max-width: 1025px) {
+      .modal__title {
+        font-size: 14pt; } }
+    @media screen and (max-width: 760px) {
+      .modal__title {
+        font-size: 6pt; } }
+  .modal__titleBorder {
+    border-bottom: 1px solid rgba(100, 97, 97, 0.651);
+    width: 10%; }
+  .modal__description {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 12pt;
+    color: gray; }
+    @media screen and (min-width: 761px) and (max-width: 1025px) {
+      .modal__description {
+        font-size: 8pt; } }
+    @media screen and (max-width: 760px) {
+      .modal__description {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 5pt; } }
+  .modal__price {
+    bottom: 0;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    border-bottom: 1px dashed rgba(160, 145, 145, 0.651);
+    border-top: 1px dashed rgba(160, 145, 145, 0.651);
+    width: 60%;
+    font-size: 11pt;
+    color: #4b4b4b; }
+    @media screen and (min-width: 761px) and (max-width: 1025px) {
+      .modal__price {
+        font-size: 8pt; } }
+    @media screen and (max-width: 760px) {
+      .modal__price {
+        font-size: 5pt;
+        margin-top: 0;
+        margin-bottom: 0; } }
+  .modal__button {
+    background-color: #00aa54;
+    border: none;
+    color: white;
+    padding: 12px 42px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 14px; }
+    @media screen and (min-width: 761px) and (max-width: 1025px) {
+      .modal__button {
+        padding: 8px 28px; } }
+    @media screen and (max-width: 760px) {
+      .modal__button {
+        padding: 3x 11px;
+        font-size: 6px; } }
+    .modal__button:hover {
+      background-color: #095837; }

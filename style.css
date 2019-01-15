@@ -40,7 +40,7 @@
         max-width: 250px;
     }
 
-    div.hamburger-menu{
+    div.hamburgerMenu{
         display:none;
     }
 
@@ -977,7 +977,7 @@
     }
 
     .modal-pic-size{
-        width: 75px;
+        width: 100px;
         height: 100px;
     }
 
