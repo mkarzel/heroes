@@ -1,8 +1,5 @@
 .banner {
-  background-image: url("./images/home-slide01.jpg");
-  max-width: 2000px;
   width: 100%;
-  min-height: 800px;
   height: auto;
   color: white;
   text-align: right;
@@ -11,24 +8,26 @@
   margin-left: auto;
   margin-right: auto;
   background-repeat: no-repeat; }
-  @media screen and (min-width: 1025px) and (max-width: 1500px) {
-    .banner {
-      background-image: url("./images/home-slide01-1024.jpg");
-      background-image: -webkit-image-set(url("./images/home-slide01-1024.jpg") 1x, url("./images/home-slide01-1024.jpg") 2x); } }
-  @media screen and (min-width: 761px) and (max-width: 1025px) {
-    .banner {
-      background-image: url("./images/home-slide01-1024.jpg");
-      background-image: -webkit-image-set(url("./images/home-slide01-1024.jpg") 1x, url("./images/home-slide01-1024.jpg") 2x); } }
   @media screen and (max-width: 760px) {
     .banner {
-      background-image: url("./images/home-slide01-760.jpg");
-      background-image: -webkit-image-set(url("./images/home-slide01-760.jpg") 1x, url("./images/home-slide01-760.jpg") 2x);
       display: block; } }
   .banner__logo {
-    max-width: 250px; }
+    max-width: 350px;
+    top: 0;
+    left: 0;
+    position: absolute; }
+    @media screen and (min-width: 1025px) and (max-width: 1400px) {
+      .banner__logo {
+        max-width: 250px; } }
     @media screen and (max-width: 1025px) {
       .banner__logo {
         max-width: 150px; } }
+    .banner__logo--form {
+      margin-top: 10px;
+      max-width: 250px; }
+      @media screen and (max-width: 1025px) {
+        .banner__logo--form {
+          max-width: 150px; } }
   .banner__form {
     background-image: url("./images/home-slide01.jpg");
     max-width: 2000px;
@@ -441,8 +440,14 @@ p.normal {
       font-size: 6pt; } }
 
 p.menu {
-  font-size: 10pt; }
-  @media screen and (min-width: 900px) and (max-width: 1025px) {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 15pt; }
+  @media screen and (min-width: 1025px) and (max-width: 1500px) {
+    p.menu {
+      font-size: 10pt; } }
+  @media screen and (min-width: 900px) and (max-width: 1200px) {
     p.menu {
       font-size: 7pt; } }
   @media screen and (min-width: 761px) and (max-width: 900px) {
@@ -451,6 +456,17 @@ p.menu {
   @media screen and (max-width: 760px) {
     p.menu {
       font-size: 0pt; } }
+  p.menu--form {
+    font-size: 9pt; }
+    @media screen and (min-width: 900px) and (max-width: 1200px) {
+      p.menu--form {
+        font-size: 7pt; } }
+    @media screen and (min-width: 761px) and (max-width: 900px) {
+      p.menu--form {
+        font-size: 5pt; } }
+    @media screen and (max-width: 760px) {
+      p.menu--form {
+        font-size: 0pt; } }
 
 @media screen and (max-width: 760px) {
   .hamburger__menu {
@@ -509,7 +525,9 @@ p.menu {
     display: block;
     cursor: pointer;
     font-size: 14px;
-    left: 0; } }
+    left: 0;
+    top: 50px;
+    position: absolute; } }
 
 body {
   margin: 0;

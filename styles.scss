@@ -1,8 +1,7 @@
 .banner{
-    background-image: url("./images/home-slide01.jpg");
-    max-width: 2000px;
+    // background-image: url("./images/home-slide01.jpg");
+    // max-width: 2000px;
     width: 100%;
-    min-height: 800px;
     height: auto;
     color: white;
     text-align: right;
@@ -13,34 +12,32 @@
     background-repeat: no-repeat;
     @media screen and (min-width: 1025px) and (max-width: 1500px){
         // min-height: 500px;
-        background-image: url("./images/home-slide01-1024.jpg");
-        background-image: -webkit-image-set(
-            url("./images/home-slide01-1024.jpg") 1x,
-            url("./images/home-slide01-1024.jpg") 2x
-        );
     }
     @media screen and (min-width: 761px) and (max-width: 1025px){
-        background-image: url("./images/home-slide01-1024.jpg");
-        background-image: -webkit-image-set(
-            url("./images/home-slide01-1024.jpg") 1x,
-            url("./images/home-slide01-1024.jpg") 2x
-        );
         // min-height: 300px;
     }
-    @media screen and (max-width: 760px){
-        background-image: url("./images/home-slide01-760.jpg");
-        background-image: -webkit-image-set(
-            url("./images/home-slide01-760.jpg") 1x,
-            url("./images/home-slide01-760.jpg") 2x
-        );
+    @media screen and (max-width: 760px){ 
         // min-height: 250px;
         display: block;
     }
 
     &__logo {
-            max-width: 250px;
+            max-width: 350px;
+            top: 0;
+            left: 0;
+            position: absolute;
+            @media screen and (min-width: 1025px) and (max-width: 1400px) {
+                max-width: 250px;
+            }
             @media screen and (max-width: 1025px) {
                 max-width: 150px;
+            }
+            &--form{
+                margin-top: 10px;
+                max-width: 250px;
+                @media screen and (max-width: 1025px) {
+                    max-width: 150px;
+                }
             }
     }
 
@@ -525,8 +522,14 @@ p.normal{
 }
 
 p.menu{
-    font-size: 10pt;
-    @media screen and (min-width: 900px) and (max-width: 1025px){
+    position:absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 15pt;
+    @media screen and (min-width: 1025px) and (max-width: 1500px){
+        font-size: 10pt;
+    }
+    @media screen and (min-width: 900px) and (max-width: 1200px){
         font-size: 7pt;
     }
     @media screen and (min-width: 761px) and (max-width: 900px){
@@ -534,6 +537,18 @@ p.menu{
     }
     @media screen and (max-width: 760px){
         font-size: 0pt;
+    }
+    &--form{
+        font-size: 9pt;
+        @media screen and (min-width: 900px) and (max-width: 1200px){
+            font-size: 7pt;
+        }
+        @media screen and (min-width: 761px) and (max-width: 900px){
+            font-size: 5pt;
+        }
+        @media screen and (max-width: 760px){
+            font-size: 0pt;
+        }
     }
 }
 
@@ -603,6 +618,8 @@ p.menu{
                 cursor: pointer;
                 font-size: 14px;
                 left: 0;
+                top:50px;
+                position: absolute;
               }
           }
         }
