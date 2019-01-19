@@ -1,0 +1,44 @@
+    [    
+        {
+            "superman": {
+                "name": "Superman",
+                "image": "./images/superman.jpg",
+                "price": "3500"
+            }
+        },
+        {
+            "hulk": {
+                "name": "Hulk",
+                "image": "./images/superman.jpg",
+                "price": "2500"
+            }
+        },
+        {
+            "thor":{
+                "name": "Thor",
+                "image": "./images/thor.jpg",
+                "price": "55000"
+            }
+        },
+        {
+            "ironman":{
+                "name": "Ironman",
+                "image": "./images/ironman.jpg",
+                "price": "75000"
+            }
+        },
+        {
+            "potter":{
+                "name": "Potter",
+                "image": "./images/potter.jpg",
+                "price": "125000"
+            }
+        },
+        {
+            "batman":{
+                "name": "Batman",
+                "image": "./images/batman.jpg",
+                "price": "2000"
+            }
+        }
+    ]

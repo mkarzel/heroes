@@ -4,6 +4,7 @@
 <head>
     <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="scripts.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
     <meta charset="UTF-8">
     <title>HEROES</title>
@@ -15,7 +16,7 @@
             <img class="banner__logo--form" src="./images/logo.png" align="left">
         </a>
         <p class="menu--form">
-            <a href="form.html">DODAJ HEROSA</a> | <a href="">EDYTUJ HEROSA</a> | <a href="deleteHero.html">USUŃ HEROSA</a> | <a href="">WYCZYŚĆ
+            <a href="form.html">DODAJ HEROSA</a> | <a href="editHero.html">EDYTUJ HEROSA</a> | <a href="deleteHero.html">USUŃ HEROSA</a> | <a href="#" onclick='clearDB()'>WYCZYŚĆ
                 BAZĘ</a> | <a href="">WCZYTAJ HEROSÓW</a>
         </p>
     </div>
@@ -30,9 +31,9 @@
                 </a>
                 <ul class="hamburger__menu--ul">
                     <li><a class="hamburger__menu--a" href="form.html">DODAJ HEROSA</a></li>
-                    <li><a class="hamburger__menu--a" href="">EDYTUJ HEROSA</a></li>
+                    <li><a class="hamburger__menu--a" href="editHero.html">EDYTUJ HEROSA</a></li>
                     <li><a class="hamburger__menu--a" href="deleteHero.html">USUŃ HEROSA</a></li>
-                    <li><a class="hamburger__menu--a" href="">WYCZYŚĆ BAZĘ</a></li>
+                    <li><a class="hamburger__menu--a" href="#" onclick='clearDB()'>WYCZYŚĆ BAZĘ</a></li>
                     <li><a class="hamburger__menu--a" href="">WCZYTAJ HEROSÓW</a></li>
                 </ul>
             </nav>
@@ -43,19 +44,19 @@
             <H1 align="center">Dodaj Herosa</H1>
         </div>
         <div>
-            <input class="form__input" type="text" placeholder="Nazwa Bohatera">
+            <input class="form__input" type="text" id="heroName" placeholder="Nazwa Bohatera">
         </div>
         <div>
-            <input class="form__input" type="text" placeholder="Adres/nazwa zdjęcia">
+            <input class="form__input" type="text" id="heroPic" placeholder="Adres/nazwa zdjęcia">
         </div>
         <div>
-            <input class="form__input" type="text" placeholder="Cena wynajmu /h">
+            <input class="form__input" type="text" id="heroPrice" placeholder="Cena wynajmu /h">
         </div>
         <div>
             <input class="form__input" type="text" placeholder="Opis Bohatera">
         </div>
         <div align="center">
-            <button class="form__button">Submit</button>
+            <button class="form__button" onclick="addHeroToDB()">Submit</button>
         </div>
     </div>
 </body>
