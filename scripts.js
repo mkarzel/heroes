@@ -1,7 +1,11 @@
 clickedHero = null;
 heroShown = null;
+basketValue = null;
+basketContent = null
 
 window.onload = function () {
+
+    localStorage.clear();
     
     superman = {
         name: 'Superman',
@@ -53,30 +57,31 @@ window.onload = function () {
 
     document.getElementById("heroes").innerHTML = 
     '<div class="hero">\
-        <img class="clickable-img" src="'+superman.image+'" id="superman">\
+        <img class="clickableImg" src="'+superman.image+'" id="superman">\
         <p class="thick">'+superman.name+'</p>\
         <p class="normal">Cena wynajmu '+superman.price+' zł/h</p>\
     </div>\
     <div class="hero">\
-        <img class="clickable-img" src="'+hulk.image+'" id="hulk">\
+        <img class="clickableImg" src="'+hulk.image+'" id="hulk">\
         <p class="thick">'+hulk.name+'</p>\
         <p class="normal">Cena wynajmu '+hulk.price+' zł/h</p>\
     </div>\
     <div class="hero">\
-        <img class="clickable-img" src="'+thor.image+'" id="thor">\
+        <img class="clickableImg" src="'+thor.image+'" id="thor">\
         <p class="thick">'+thor.name+'</p>\
         <p class="normal">Cena wynajmu '+thor.price+' zł/h</p>\
     </div>\
     <div class="hero">\
-        <img class="clickable-img" src="'+ironman.image+'" id="ironman">\
+        <img class="clickableImg" src="'+ironman.image+'" id="ironman">\
         <p class="thick">'+ironman.name+'</p>\
         <p class="normal">Cena wynajmu '+ironman.price+' zł/h</p>\
     </div>\
-    <div class="hero"><img class="clickable-img" src="'+potter.image+'" id="potter">\
+    <div class="hero">\
+    <img class="clickableImg" src="'+potter.image+'" id="potter">\
         <p class="thick">'+potter.name+'</p>\
         <p class="normal">Cena wynajmu '+potter.price+' zł/h</p>\
     </div>\
-    <div class="hero"><img class="clickable-img" src="'+batman.image+'" id="batman">\
+    <div class="hero"><img class="clickableImg" src="'+batman.image+'" id="batman">\
         <p class="thick">'+batman.name+'</p>\
         <p class="normal">Cena wynajmu '+batman.price+' zł/h</p>\
     </div>';
@@ -130,6 +135,7 @@ window.onload = function () {
     }
 };
 
+
 openModal = function() {    
     // Get the modal const
     modal = document.getElementById('myModal');
@@ -138,7 +144,7 @@ openModal = function() {
     heroModal = document.getElementById(clickedHero);
 
     // Get the <span> element that closes the modal const
-    span = document.getElementsByClassName("close")[0];
+    span = document.getElementsByClassName("modal__close")[0];
     // let
     buttonModal = document.getElementById("buttonModal");
 
@@ -173,26 +179,26 @@ openModal = function() {
 displayHeroDetails = function () {
     document.getElementById("heroWindow").innerHTML = 
     '<div id="myModal" class="modal">\
-        <div class="modal-content">\
-            <div class="modal-pic"> \
-                <img src="'+heroShown.image+'" class="modal-pic-size">\
+        <div class="modal__content">\
+            <div class="modal__pic"> \
+                <img src="'+heroShown.image+'" class="modal__pic--size">\
             </div>\
-            <div class="modal-right">\
-                <div class="modal-title">\
+            <div class="modal__right">\
+                <div class="modal__title">\
                     <p>'+heroShown.name+'</p>\
                 </div>\
-                <div class="modal-title-border"></div>\
-                <div class="modal-description">\
+                <div class="modal__titleBorder"></div>\
+                <div class="modal__description">\
                     <p>'+heroShown.description+'</p>\
                 </div>\
-                <div class="modal-price">\
+                <div class="modal__price">\
                     <p>WYNAJEM: '+heroShown.price+' ZŁ/H<p>\
                 </div>\
                 <div id="buttonModal">\
-                    <button id="buttonModal" class="modal-button">DODAJ DO KOSZYKA</button>\
+                    <button id="buttonModal" class="modal__button">DODAJ DO KOSZYKA</button>\
                 </div>\
             </div>\
-            <span align="right" class="close">&times;</span>\
+            <span align="right" class="modal__close">&times;</span>\
         </div>\
     </div>';
 }
@@ -201,26 +207,31 @@ addToBasket = function () {
 
     if(heroShown.isAvailable == true)
     {
-        document.getElementById("basket-content").innerHTML += 
-        '<div id="'+heroShown.name+'" class="basket-item">\
+        document.getElementById("basket__content").innerHTML += 
+        '<div id="'+heroShown.name+'" class="basket__item">\
             <div>\
-                <img class="basket-item-pic" src="'+heroShown.image+'">\
+                <img class="basket__itemPic" src="'+heroShown.image+'">\
             </div>\
-            <div class="basket-right">\
-                <div class="basket-item-header">\
+            <div class="basket__right">\
+                <div class="basket__itemHeader">\
                     <p>'+heroShown.name+'</p>\
                 </div>\
-                <div class="basket-item-description">\
+                <div class="basket__itemDescription">\
                     <p>'+heroShown.description+'</p>\
                 </div>\
                 <div>\
-                    <button id="basketButton'+heroShown.name+'" class="basket-item-button">USUŃ Z KOSZYKA | &times;</button>\
+                    <button id="basket__itemButton'+heroShown.name+'" class="basket__itemButton">USUŃ Z KOSZYKA | &times;</button>\
                 </div>\
             </div>\
         </div>'
 
         heroShown.isAvailable = false;
+        basketValue = parseInt(heroShown.price) + basketValue
         console.log(heroShown.name + " " + heroShown.isAvailable)
+        console.log(basketValue)
+        document.getElementById("basketValue").innerHTML = basketValue + " zł"
+        localStorage.setItem("basketValue", basketValue);
+        localStorage.setItem(heroShown.name, heroShown)
     }
     else
     {
@@ -228,41 +239,64 @@ addToBasket = function () {
     }
     modal.style.display = "none";
     
-    if(document.getElementById("basketButtonSuperman"))
-    document.getElementById("basketButtonSuperman").onclick = function () {
+    if(document.getElementById("basket__itemButtonSuperman"))
+    document.getElementById("basket__itemButtonSuperman").onclick = function () {
         let elem = document.querySelector('#Superman');
         elem.parentNode.removeChild(elem);
         superman.isAvailable = true;
+        basketValue = basketValue - parseInt(superman.price)
+        document.getElementById("basketValue").innerHTML = basketValue + " zł"
+        localStorage.setItem("basketValue", basketValue);
+        localStorage.removeItem(superman.name)
     }
-    if(document.getElementById("basketButtonHulk"))
-    document.getElementById("basketButtonHulk").onclick = function () {
+    if(document.getElementById("basket__itemButtonHulk"))
+    document.getElementById("basket__itemButtonHulk").onclick = function () {
         let elem = document.querySelector('#Hulk');
         elem.parentNode.removeChild(elem);
         hulk.isAvailable = true;
+        basketValue = basketValue - parseInt(hulk.price)
+        document.getElementById("basketValue").innerHTML = basketValue + " zł"
+        localStorage.setItem("basketValue", basketValue);
+        localStorage.removeItem(hulk.name)
     }
-    if(document.getElementById("basketButtonThor"))
-    document.getElementById("basketButtonThor").onclick = function () {
+    if(document.getElementById("basket__itemButtonThor"))
+    document.getElementById("basket__itemButtonThor").onclick = function () {
         let elem = document.querySelector('#Thor');
         elem.parentNode.removeChild(elem);
         thor.isAvailable = true;
+        basketValue = basketValue - parseInt(thor.price)
+        document.getElementById("basketValue").innerHTML = basketValue + " zł"
+        localStorage.setItem("basketValue", basketValue);
+        localStorage.removeItem(thor.name)
     }
-    if(document.getElementById("basketButtonIronman"))
-    document.getElementById("basketButtonIronman").onclick = function () {
+    if(document.getElementById("basket__itemButtonIronman"))
+    document.getElementById("basket__itemButtonIronman").onclick = function () {
         let elem = document.querySelector('#Ironman');
         elem.parentNode.removeChild(elem);
         ironman.isAvailable = true;
+        basketValue = basketValue - parseInt(ironman.price)
+        document.getElementById("basketValue").innerHTML = basketValue + " zł"
+        localStorage.setItem("basketValue", basketValue);
+        localStorage.removeItem(ironman.name)
     }
-    if(document.getElementById("basketButtonPotter"))
-    document.getElementById("basketButtonPotter").onclick = function () {
+    if(document.getElementById("basket__itemButtonPotter"))
+    document.getElementById("basket__itemButtonPotter").onclick = function () {
         let elem = document.querySelector('#Potter');
         elem.parentNode.removeChild(elem);
         potter.isAvailable = true;
+        basketValue = basketValue - parseInt(potter.price)
+        document.getElementById("basketValue").innerHTML = basketValue + " zł"
+        localStorage.setItem("basketValue", basketValue);
+        localStorage.removeItem(potter.name)
     }
-    if(document.getElementById("basketButtonBatman"))
-    document.getElementById("basketButtonBatman").onclick = function () {
+    if(document.getElementById("basket__itemButtonBatman"))
+    document.getElementById("basket__itemButtonBatman").onclick = function () {
         let elem = document.querySelector('#Batman');
         elem.parentNode.removeChild(elem);
         batman.isAvailable = true;
+        basketValue = basketValue - parseInt(batman.price)
+        localStorage.setItem("basketValue", basketValue);
+        localStorage.removeItem(batman.name)
     } 
 };
 

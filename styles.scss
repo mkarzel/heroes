@@ -2,26 +2,40 @@
     background-image: url("./images/home-slide01.jpg");
     max-width: 2000px;
     width: 100%;
-    min-height: 870px;
-    @media screen and (min-width: 1025px) and (max-width: 1500px){
-        min-height: 500px;
-    }
-    @media screen and (min-width: 761px) and (max-width: 1025px){
-        min-height: 350px;
-    }
-    @media screen and (max-width: 760px){
-        min-height: 300px;
-        display: block;
-    }
+    min-height: 800px;
     height: auto;
     color: white;
     text-align: right;
-    background-size: cover; 
+    background-size: 100%; 
     align-content: center;
     margin-left: auto;
     margin-right: auto;
     background-repeat: no-repeat;
-    background-size: cover; 
+    @media screen and (min-width: 1025px) and (max-width: 1500px){
+        // min-height: 500px;
+        background-image: url("./images/home-slide01-1024.jpg");
+        background-image: -webkit-image-set(
+            url("./images/home-slide01-1024.jpg") 1x,
+            url("./images/home-slide01-1024.jpg") 2x
+        );
+    }
+    @media screen and (min-width: 761px) and (max-width: 1025px){
+        background-image: url("./images/home-slide01-1024.jpg");
+        background-image: -webkit-image-set(
+            url("./images/home-slide01-1024.jpg") 1x,
+            url("./images/home-slide01-1024.jpg") 2x
+        );
+        // min-height: 300px;
+    }
+    @media screen and (max-width: 760px){
+        background-image: url("./images/home-slide01-760.jpg");
+        background-image: -webkit-image-set(
+            url("./images/home-slide01-760.jpg") 1x,
+            url("./images/home-slide01-760.jpg") 2x
+        );
+        // min-height: 250px;
+        display: block;
+    }
 
     &__logo {
             max-width: 250px;
@@ -60,7 +74,6 @@ div.hamburgerMenu{
     border: 1px solid rgb(15, 10, 90);
     width: 80%;
     max-width: 1600px;
-    min-width: 900px;
     @media screen and (min-width: 761px) and (max-width: 1025px){
         max-width: 1026px;
         min-width: none;
@@ -193,14 +206,7 @@ div.hamburgerMenu{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1600px;
-    min-width: 900px;
-    @media screen and (min-width: 761px) and (max-width: 1025px){
-        max-width: 2000px;
-    }
-    @media screen and (max-width: 760px){
-        max-width: 760px;
-    }
+    max-width: 1800px;
     width: 80%;
     flex-wrap: wrap;
     flex-grow: inherit;
@@ -289,7 +295,7 @@ div.hamburgerMenu{
         width: 100%;
     }
 
-    &__Pic{
+    &__pic{
         bottom: 0;
         margin-top: 10px;
         margin-left: 10px;
@@ -422,7 +428,7 @@ div.hamburgerMenu{
     &__input[type="time"],
     &__input[type="url"],
     &__input[type="password"],
-    &__input select 
+    &__select 
     {
         box-sizing: border-box;
         -webkit-box-sizing: border-box;
@@ -519,7 +525,7 @@ p.normal{
 }
 
 p.menu{
-    font-size: 11pt;
+    font-size: 10pt;
     @media screen and (min-width: 900px) and (max-width: 1025px){
         font-size: 7pt;
     }
@@ -574,6 +580,30 @@ p.menu{
                 -webkit-box-shadow: 3px 0 12px rgba(0,0,0,.25);
                 box-shadow: 3px 0 12px rgba(0,0,0,.25);
             }
+          }&__button{
+              &--close{
+                background-color:red;
+                border: none;
+                color: white;
+                padding: 3px 40px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                cursor: pointer;
+                font-size: 14px;
+              }
+              &--open{
+                background-color:rgb(0, 0, 0);
+                border: none;
+                color: white;
+                padding: 5px 42px;
+                text-align: center;
+                text-decoration: none;
+                display: block;
+                cursor: pointer;
+                font-size: 14px;
+                left: 0;
+              }
           }
         }
 
@@ -589,13 +619,15 @@ body{
     opacity: 1; /* Firefox */
 }
 
-a{ 
-    color: inherit; 
-    text-decoration: none;
-    margin-left: 30px;
-    margin-right: 30px;
-    &:visited, &:hover{
-        color:inherit;
+a{   
+        color: inherit; 
         text-decoration: none;
+        margin-left: 30px;
+        margin-right: 30px;
+        @media screen and (min-width: 761px){
+        &:visited, &:hover{
+            color:inherit;
+            text-decoration: none;
+        }
     }
 }

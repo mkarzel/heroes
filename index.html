@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
     <script src="scripts.js"></script>
     <meta charset="UTF-8">
@@ -13,129 +14,56 @@
     <div class="banner">
         <div>
             <a href="index.html">
-                <img class="logo" src="./images/logo.png" align="left">
+                <img class="banner__logo" src="./images/logo.png" align="left">
             </a>
         </div>
-        <p class="menu"><a href="form.html">DODAJ HEROSA</a> | <a href="">EDYTUJ HEROSA</a> | <a href="">USUŃ HEROSA</a>
+        <p class="menu"><a href="form.html">DODAJ HEROSA</a> | <a href="">EDYTUJ HEROSA</a> | <a href="deleteHero.html">USUŃ HEROSA</a>
             | <a href="">WYCZYŚĆ BAZĘ</a> | <a href="">WCZYTAJ HEROSÓW</a></p>
         <div class="hamburgerMenu">
-            <header>
-                <a href="#main-menu">
-                    <button class="hamburger-button-open">MENU</button>
+            <!-- <header> -->
+                <a href="#hamburger__menu">
+                    <button class="hamburger__button--open">MENU</button>
                 </a>
-                <nav id="main-menu" class="main-menu" role="navigation">
-                    <a href="" class="menu-close" role="button">
-                        <button class="hamburger-button-close">CLOSE</button>
+                <nav id="hamburger__menu" class="hamburger__menu" role="navigation">
+                    <a href="" class="hamburger__menu--close" role="button">
+                        <button class="hamburger__button--close">CLOSE</button>
                     </a>
-                    <ul>
-                        <li><a href="form.html">DODAJ HEROSA</a></li>
-                        <li><a href="">EDYTUJ HEROSA</a></li>
-                        <li><a href="">USUŃ HEROSA</a></li>
-                        <li><a href="">WYCZYŚĆ BAZĘ</a></li>
-                        <li><a href="">WCZYTAJ HEROSÓW</a></li>
+                    <ul class="hamburger__menu--ul">
+                        <li><a class="hamburger__menu--a" href="form.html">DODAJ HEROSA</a></li>
+                        <li><a class="hamburger__menu--a" href="">EDYTUJ HEROSA</a></li>
+                        <li><a class="hamburger__menu--a" href="deleteHero.html">USUŃ HEROSA</a></li>
+                        <li><a class="hamburger__menu--a" href="">WYCZYŚĆ BAZĘ</a></li>
+                        <li><a class="hamburger__menu--a" href="">WCZYTAJ HEROSÓW</a></li>
                     </ul>
                 </nav>
-            </header>
+            <!-- </header> -->
         </div>
     </div>
     <div>
         <div class="basket">
-            <div class="basket-header">
+            <div class="basket__header">
                 <div>
-                    <p class="basket-font">Koszyk</p>
+                    <p>Koszyk</p>
                 </div>
-                <div class="basket-price">
+                <div class="basket__price">
                     <div>
-                        <p class="basket-font">Do zapłaty: </p>
+                        <p>Do zapłaty: </p>
+                        <!-- class="basket-font" -->
                     </div>
                     <div>
-                        <p class="basket-price-font">0 zł</p>
+                        <p id="basketValue" class="basket__priceFont">0 zł</p>
                     </div>
                 </div>
             </div>
-            <div class="basket-header-border"></div>
-            <!-- <div class="basket-empty">
-            <p>Twój koszyk jest pusty</p>
-        </div> -->
-            <div id="basket-content" class="basket-content">
-                <!-- <div class="basket-item">
-                <div>
-                    <img class="basket-item-pic" src="./images/superman.jpg">
-                </div>
-                <div class="basket-right">
-                    <div class="basket-item-header">
-                        <p>SUPERMAN</p>
-                    </div>
-                    <div class="basket-item-description">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id dolor ipsum. Duis porttitor, nisl in laoreet gravida, lorem ipsum dapibus massa, ac vestibulum urna tortor quis libero. Vivamus id lacus metus. Integer a tortor fringilla, scelerisque tellus ut, sagittis velit. Sed at imperdiet lacus. Nulla facilisi. Donec sed euismod nulla. Donec tempor dolor ex, vitae vestibulum lectus dignissim eu. </p>
-                    </div>
-                    <div>
-                        <button class="basket-item-button">USUŃ Z KOSZYKA | &times;</button> 
-                    </div>                    
-                </div>                    
-            </div>        -->
-            </div>
+            <div class="basket__headerBorder"></div>
+            <div id="basket__content" class="basket__content"></div>
         </div>
-        <div class="heroes" id="heroes">
-            <!-- <div class="hero" id="superman">
-            <img src="./images/superman.jpg" id="myHero">
-            <p class="thick">Superman</p> 
-            <p class="normal">Cena wynajmu 3500 zł/h</p>
-        </div>
-        <div class="hero">
-            <img class="clickable-img" src="./images/hulk.jpg">
-            <p class="thick">Hulk</p>
-            <p class="normal">Cena wynajmu 25000 zł/h</p>
-        </div>
-        <div class="hero">
-            <img class="clickable-img" src="./images/thor.jpg">
-            <p class="thick">Thor</p>
-            <p class="normal">Cena wynajmu 55000 zł/h</p>
-        </div>
-        <div class="hero">
-            <img class="clickable-img" src="./images/ironman.jpg">
-            <p class="thick">Ironman</p>
-            <p class="normal">Cena wynajmu 75000 zł/h</p>
-        </div>
-        <div class="hero">
-            <img class="clickable-img" src="./images/potter.jpg">
-            <p class="thick">Potter</p>
-            <p class="normal">Cena wynajmu 125000 zł/h</p>
-        </div>
-        <div class="hero" class="hero">
-            <img class="clickable-img" src="./images/batman.jpg">
-            <p class="thick">Batman</p>
-            <p class="normal">Cena wynajmu 2000 zł/h</p>
-        </div> -->
-        </div>
+        <div class="heroes" id="heroes"></div>
     </div>
 
     <!-- Hero modal -->
     <div id="heroWindow">
     </div>
-    <!-- <div id="myModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-pic"> 
-                <img src="./images/superman.jpg" width="400px" height="400px">
-            </div>
-            <div class="modal-right">
-                <div class="modal-title">
-                    <p>I'M SUPERMAN</p>
-                </div>
-                <div class="modal-title-border"></div>
-                <div class="modal-description">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id dolor ipsum. Duis porttitor, nisl in laoreet gravida, lorem ipsum dapibus massa, ac vestibulum urna tortor quis libero. Vivamus id lacus metus. Integer a tortor fringilla, scelerisque tellus ut, sagittis velit. Sed at imperdiet lacus. Nulla facilisi. Donec sed euismod nulla. Donec tempor dolor ex, vitae vestibulum lectus dignissim eu. </p>
-                </div>
-                <div class="modal-price">
-                    <p>WYNAJEM: 3 500 ZŁ/H<p>
-                </div>
-                <div id="buttonModal">
-                    <button id="buttonModal" class="modal-button">DODAJ DO KOSZYKA</button>
-                </div>
-            </div>            
-            <span class="close">&times;</span>
-        </div>
-    </div> -->
 </body>
 
 <footer class="footer">

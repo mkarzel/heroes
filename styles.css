@@ -2,25 +2,27 @@
   background-image: url("./images/home-slide01.jpg");
   max-width: 2000px;
   width: 100%;
-  min-height: 870px;
+  min-height: 800px;
   height: auto;
   color: white;
   text-align: right;
-  background-size: cover;
+  background-size: 100%;
   align-content: center;
   margin-left: auto;
   margin-right: auto;
-  background-repeat: no-repeat;
-  background-size: cover; }
+  background-repeat: no-repeat; }
   @media screen and (min-width: 1025px) and (max-width: 1500px) {
     .banner {
-      min-height: 500px; } }
+      background-image: url("./images/home-slide01-1024.jpg");
+      background-image: -webkit-image-set(url("./images/home-slide01-1024.jpg") 1x, url("./images/home-slide01-1024.jpg") 2x); } }
   @media screen and (min-width: 761px) and (max-width: 1025px) {
     .banner {
-      min-height: 350px; } }
+      background-image: url("./images/home-slide01-1024.jpg");
+      background-image: -webkit-image-set(url("./images/home-slide01-1024.jpg") 1x, url("./images/home-slide01-1024.jpg") 2x); } }
   @media screen and (max-width: 760px) {
     .banner {
-      min-height: 300px;
+      background-image: url("./images/home-slide01-760.jpg");
+      background-image: -webkit-image-set(url("./images/home-slide01-760.jpg") 1x, url("./images/home-slide01-760.jpg") 2x);
       display: block; } }
   .banner__logo {
     max-width: 250px; }
@@ -53,7 +55,6 @@
   border: 1px solid #0f0a5a;
   width: 80%;
   max-width: 1600px;
-  min-width: 900px;
   margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
@@ -161,17 +162,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1600px;
-  min-width: 900px;
+  max-width: 1800px;
   width: 80%;
   flex-wrap: wrap;
   flex-grow: inherit; }
-  @media screen and (min-width: 761px) and (max-width: 1025px) {
-    .heroes {
-      max-width: 2000px; } }
-  @media screen and (max-width: 760px) {
-    .heroes {
-      max-width: 760px; } }
 
 .hero {
   margin-bottom: 15px;
@@ -252,25 +246,25 @@
         margin-left: 10px;
         margin-right: 10px;
         margin-top: -10px; } }
-  .modal__Pic {
+  .modal__pic {
     bottom: 0;
     margin-top: 10px;
     margin-left: 10px;
     margin-bottom: 10px; }
     @media screen and (max-width: 760px) {
-      .modal__Pic {
+      .modal__pic {
         margin-top: 0;
         margin-left: 0;
         margin-bottom: 0; } }
-    .modal__Pic--size {
+    .modal__pic--size {
       width: 300px;
       height: 300px; }
       @media screen and (min-width: 761px) and (max-width: 1025px) {
-        .modal__Pic--size {
+        .modal__pic--size {
           width: 200px;
           height: 200px; } }
       @media screen and (max-width: 760px) {
-        .modal__Pic--size {
+        .modal__pic--size {
           width: 100px;
           height: 100px; } }
   .modal__title {
@@ -360,8 +354,7 @@
       height: 100%;
       padding: 10px;
       margin: 20px auto; } }
-  .form__input[type="text"], .form__input[type="date"], .form__input[type="datetime"], .form__input[type="email"], .form__input[type="number"], .form__input[type="search"], .form__input[type="time"], .form__input[type="url"], .form__input[type="password"],
-  .form__input select {
+  .form__input[type="text"], .form__input[type="date"], .form__input[type="datetime"], .form__input[type="email"], .form__input[type="number"], .form__input[type="search"], .form__input[type="time"], .form__input[type="url"], .form__input[type="password"], .form__select {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -375,14 +368,12 @@
     margin-bottom: 30px;
     height: 45px; }
     @media screen and (min-width: 761px) and (max-width: 1025px) {
-      .form__input[type="text"], .form__input[type="date"], .form__input[type="datetime"], .form__input[type="email"], .form__input[type="number"], .form__input[type="search"], .form__input[type="time"], .form__input[type="url"], .form__input[type="password"],
-      .form__input select {
+      .form__input[type="text"], .form__input[type="date"], .form__input[type="datetime"], .form__input[type="email"], .form__input[type="number"], .form__input[type="search"], .form__input[type="time"], .form__input[type="url"], .form__input[type="password"], .form__select {
         margin-top: 20px;
         margin-bottom: 20px;
         height: 35px; } }
     @media screen and (max-width: 760px) {
-      .form__input[type="text"], .form__input[type="date"], .form__input[type="datetime"], .form__input[type="email"], .form__input[type="number"], .form__input[type="search"], .form__input[type="time"], .form__input[type="url"], .form__input[type="password"],
-      .form__input select {
+      .form__input[type="text"], .form__input[type="date"], .form__input[type="datetime"], .form__input[type="email"], .form__input[type="number"], .form__input[type="search"], .form__input[type="time"], .form__input[type="url"], .form__input[type="password"], .form__select {
         margin-top: 10px;
         margin-bottom: 10px;
         height: 25px; } }
@@ -450,7 +441,7 @@ p.normal {
       font-size: 6pt; } }
 
 p.menu {
-  font-size: 11pt; }
+  font-size: 10pt; }
   @media screen and (min-width: 900px) and (max-width: 1025px) {
     p.menu {
       font-size: 7pt; } }
