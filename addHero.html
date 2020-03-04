@@ -2,19 +2,16 @@
 <html lang="en">
 
 <head>
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
     <script src="scripts.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
     <meta charset="UTF-8">
     <title>HEROES</title>
 </head>
 
 <body>
-    <div class="banner">
-        <img src="./images/home-slide01.jpg" alt="banner" class="banner" srcset="
-        ./images/home-slide01-760.jpg 760w,
-        ./images/home-slide01-1024.jpg 1024w,
-        ./images/home-slide01.jpg 1025w" sizes="100vw">
+    <div class="banner__form">
         <div class="banner__header">
             <div>
                 <a href="index.html">
@@ -51,35 +48,29 @@
             </div>
         </div>
     </div>
-    <div>
-        <div class="basket">
-            <div class="basket__header">
-                <div>
-                    <p>Koszyk</p>
-                </div>
-                <div class="basket__price">
-                    <div>
-                        <p>Do zapłaty: </p>
-                        <!-- class="basket-font" -->
-                    </div>
-                    <div>
-                        <p id="basketValue" class="basket__priceFont">0 zł</p>
-                    </div>
-                </div>
-            </div>
-            <div class="basket__headerBorder"></div>
-            <div id="basket__content" class="basket__content"></div>
+    <div class="form">
+        <div>
+            <H1 align="center">Dodaj Herosa</H1>
         </div>
-        <div class="heroes" id="heroes"></div>
-    </div>
-
-    <!-- Hero modal -->
-    <div id="heroWindow">
+        <div>
+            <input class="form__input" type="text" id="heroName" placeholder="Nazwa Bohatera">
+        </div>
+        <div>
+            <input class="form__input" type="text" id="heroPic" placeholder="Adres/nazwa zdjęcia">
+        </div>
+        <div>
+            <input class="form__input" type="text" id="heroPrice" placeholder="Cena wynajmu /h">
+        </div>
+        <div>
+            <input class="form__input" type="text" placeholder="Opis Bohatera">
+        </div>
+        <div align="center">
+            <button class="form__button" onclick="addHeroToDB()">Submit</button>
+        </div>
     </div>
 </body>
-
 <footer class="footer">
-    <p>Need a Hero - Pure JS/CSS Aplikacja do ćwiczenia nabytej wiedzy o JavaScript</p>
+    <h4>Need a Hero - Pure JS/CSS Aplikacja do ćwiczenia nabytej wiedzy o JavaScript</h4>
 </footer>
 
 </html>
