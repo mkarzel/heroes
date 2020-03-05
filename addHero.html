@@ -7,44 +7,33 @@
     <script src="scripts.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
     <title>HEROES</title>
 </head>
 
 <body>
-    <div class="banner__form">
-        <div class="banner__header">
-            <div>
-                <a href="index.html">
-                    <img class="banner__header--logo" src="./images/logo.png">
-                </a>
-            </div>
-            <div class="banner__header--menu">
-                <div><a href="addHero.html">DODAJ HEROSA</a></div>
-                <div>&nbsp</div>
-                <div><a href="editHero.html">EDYTUJ HEROSA</a></div>
-                <div>&nbsp</div>
-                <div><a href="deleteHero.html">USUŃ HEROSA</a></div>
-                <div>&nbsp</div>
-                <div><a href="index.html" onclick='clearDB()'>WYCZYŚĆ BAZĘ</a></div>
-                <div>&nbsp</div>
-                <div><a href="index.html" onclick="loadHeroes()">WCZYTAJ HEROSÓW</a></div>
-            </div>
-            <div class="hamburgerMenu">
-                <a href="#hamburger__menu">
-                    <button class="hamburger__button--open">MENU</button>
-                </a>
-                <nav id="hamburger__menu" class="hamburger__menu" role="navigation">
-                    <a href="" class="hamburger__menu--close" role="button">
-                        <button class="hamburger__button--close">CLOSE</button>
+    <div>
+        <div class="header--form">
+            <div class="header">
+                <div>
+                    <a href="index.html">
+                        <img class="header__logo" src="./images/logo.png">
                     </a>
-                    <ul class="hamburger__menu--ul">
-                        <li><a class="hamburger__menu--a" href="addHero.html">DODAJ HEROSA</a></li>
-                        <li><a class="hamburger__menu--a" href="editHero.html">EDYTUJ HEROSA</a></li>
-                        <li><a class="hamburger__menu--a" href="deleteHero.html">USUŃ HEROSA</a></li>
-                        <li><a class="hamburger__menu--a" href="#" onclick='clearDB()'>WYCZYŚĆ BAZĘ</a></li>
-                        <li><a class="hamburger__menu--a" href="">WCZYTAJ HEROSÓW</a></li>
-                    </ul>
-                </nav>
+                </div>
+                <div class="header__menu">
+                    <div><a href="addHero.html">DODAJ HEROSA</a></div>
+                    <div>&nbsp</div>
+                    <div><a href="editHero.html">EDYTUJ HEROSA</a></div>
+                    <div>&nbsp</div>
+                    <div><a href="deleteHero.html">USUŃ HEROSA</a></div>
+                    <div>&nbsp</div>
+                    <div><a href="index.html" onclick='clearDB()'>WYCZYŚĆ BAZĘ</a></div>
+                    <div>&nbsp</div>
+                    <div><a href="index.html" onclick="loadHeroes()">WCZYTAJ HEROSÓW</a></div>
+                </div>
+                <div>
+                    <img src="./images/hamburger.svg.png" alt="hamburger" class="header__hamburger" />
+                </div>
             </div>
         </div>
     </div>
