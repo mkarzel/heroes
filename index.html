@@ -6,48 +6,43 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
     <script src="scripts.js"></script>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
     <title>HEROES</title>
 </head>
 
 <body>
-    <div class="banner">
-        <img src="./images/home-slide01.jpg" alt="banner" class="banner" srcset="
-        ./images/home-slide01-760.jpg 760w,
-        ./images/home-slide01-1024.jpg 1024w,
-        ./images/home-slide01.jpg 1025w" sizes="100vw">
-        <div class="banner__header">
+    <div>
+        <img class="header__background" alt="header" src="./images/home-slide01.jpg">
+        <div class="header">
             <div>
                 <a href="index.html">
-                    <img class="banner__header--logo" src="./images/logo.png">
+                    <img src="./images/logo.png" class="header__logo">
                 </a>
             </div>
-            <div class="banner__header--menu">
-                <div><a href="addHero.html">DODAJ HEROSA</a></div>
+            <div class="header__menu">
+                <div><a href="addHero.html">DODAJ&nbspHEROSA</a></div>
                 <div>&nbsp</div>
-                <div><a href="editHero.html">EDYTUJ HEROSA</a></div>
+                <div><a href="editHero.html">EDYTUJ&nbspHEROSA</a></div>
                 <div>&nbsp</div>
-                <div><a href="deleteHero.html">USUŃ HEROSA</a></div>
+                <div><a href="deleteHero.html">USUŃ&nbspHEROSA</a></div>
                 <div>&nbsp</div>
-                <div><a href="index.html" onclick='clearDB()'>WYCZYŚĆ BAZĘ</a></div>
+                <div><a href="index.html" onclick='clearDB()'>WYCZYŚĆ&nbspBAZĘ</a></div>
                 <div>&nbsp</div>
-                <div><a href="index.html" onclick="loadHeroes()">WCZYTAJ HEROSÓW</a></div>
+                <div><a href="index.html" onclick="loadHeroes()">WCZYTAJ&nbspHEROSÓW</a></div>
             </div>
-            <div class="hamburgerMenu">
-                <a href="#hamburger__menu">
-                    <button class="hamburger__button--open">MENU</button>
+            <div>
+                <img src="./images/hamburger.svg.png" alt="hamburger" class="header__hamburger" onclick="openNav()" />
+            </div>
+            <div id="hamburgerMenu" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="index.html">
+                    <img class="header__logo" src="./images/logo.png">
                 </a>
-                <nav id="hamburger__menu" class="hamburger__menu" role="navigation">
-                    <a href="" class="hamburger__menu--close" role="button">
-                        <button class="hamburger__button--close">CLOSE</button>
-                    </a>
-                    <ul class="hamburger__menu--ul">
-                        <li><a class="hamburger__menu--a" href="addHero.html">DODAJ HEROSA</a></li>
-                        <li><a class="hamburger__menu--a" href="editHero.html">EDYTUJ HEROSA</a></li>
-                        <li><a class="hamburger__menu--a" href="deleteHero.html">USUŃ HEROSA</a></li>
-                        <li><a class="hamburger__menu--a" href="#" onclick='clearDB()'>WYCZYŚĆ BAZĘ</a></li>
-                        <li><a class="hamburger__menu--a" href="">WCZYTAJ HEROSÓW</a></li>
-                    </ul>
-                </nav>
+                <a href="addHero.html">DODAJ&nbspHEROSA</a>
+                <a href="editHero.html">EDYTUJ&nbspHEROSA</a>
+                <a href="deleteHero.html">USUŃ&nbspHEROSA</a>
+                <a href="index.html" onclick='clearDB()'>WYCZYŚĆ&nbspBAZĘ</a>
+                <a href="index.html" onclick="loadHeroes()">WCZYTAJ&nbspHEROSÓW</a>
             </div>
         </div>
     </div>

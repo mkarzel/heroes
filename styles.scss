@@ -1,49 +1,105 @@
-.banner {
+.header {
+  top: 0;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
   width: 100%;
-  color: white;
-  text-align: right;
 
-  &__header {
-    top: 0;
-    position: absolute;
-    width: auto;
+  &__background {
+    width: 100vw;
+    max-width: 100%;
+  }
+
+  &__logo {
+    width: 20vw;
+    height: 5vw;
+    @media screen and (max-width: 760px) {
+      width: 40vw;
+      height: 10vw;
+    }
+  }
+
+  &__menu {
+    text-align: center;
     display: flex;
     justify-content: space-between;
-    width: 100%;
-
-    &--logo {
-      width: 20vw;
-      @media screen and (max-width: 760px) {
-        width: 40vw;
-      }
-    }
-
-    &--menu {
-      text-align: center;
-      display: flex;
-      justify-content: space-between;
-      width: 70vw;
-      align-items: center;
-      margin: 1vw;
-      font-size: 1.5vw;
-      color: white;
+    width: 70vw;
+    align-items: center;
+    font-size: 1.5vw;
+    color: white;
+    @media screen and (max-width: 760px) {
+      display: none;
     }
   }
 
-  &__form {
+  &__hamburger {
+    width: 10vw;
+    height: 10vw;
+    margin-right: 1vw;
+    &:hover {
+      cursor: pointer;
+    }
+    @media screen and (min-width: 761px) {
+      display: none;
+    }
+  }
+
+  &--form {
     background-image: url("./images/home-slide01.jpg");
     width: 100%;
-    height: 5vw;
+    height: 6vw;
     background-size: cover;
+    @media screen and (max-width: 760px) {
+      height: 12vw;
+    }
   }
 }
 
-div.hamburgerMenu {
-  @media screen and (min-width: 761px) {
-    display: none;
+.sidenav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  text-align: center;
+  padding: 0;
+  @media screen and (max-height: 450px) {
+    padding: 0;
+  }
+  & a {
+    padding: 6vw;
+    @media screen and (max-height: 450px) {
+      padding: 1vw;
+      font-size: 3vw;
+    }
+    text-decoration: none;
+    font-size: 8vw;
+    color: #a79f9f;
+    display: block;
+    transition: 0.3s;
+    &:hover {
+      color: #f1f1f1;
+    }
+  }
+  & .closebtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-top: 0;
+    font-size: 15vw;
+    @media screen and (max-height: 450px) {
+      font-size: 15vh;
+      padding-right: 6vh;
+    }
   }
 }
-
 .basket {
   border: 1px solid rgb(15, 10, 90);
   width: 80%;
@@ -483,80 +539,6 @@ p.normal {
   }
   margin-top: 0;
   margin-bottom: 0;
-}
-
-@media screen and (max-width: 760px) {
-  .hamburger {
-    &__menu {
-      position: absolute;
-      left: -200px;
-      top: 0;
-      height: auto;
-      transition: left 0.3s ease, box-shadow 0.3s ease;
-      z-index: 999;
-      &--ul {
-        list-style: none;
-        margin: 0;
-        padding: 2.5em 0 0;
-        /* Hide shadow w/ -8px while 'closed' */
-        -webkit-box-shadow: -8px 0 8px rgba(0, 0, 0, 0.5);
-        -moz-box-shadow: -8px 0 8px rgba(0, 0, 0, 0.5);
-        box-shadow: -8px 0 8px rgba(0, 0, 0, 0.5);
-        min-height: 100%;
-        width: 200px;
-        background: #1a1a1a;
-      }
-      &--a {
-        display: block;
-        padding: 0.75em 15px;
-        line-height: 1em;
-        font-size: 8pt;
-        color: #fff;
-        text-decoration: none;
-        border-bottom: 1px solid #383838;
-      }
-      &--close {
-        position: absolute;
-        right: 0;
-        top: 0;
-      }
-      &:target,
-      &[aria-expanded="true"] {
-        left: 0;
-        outline: none;
-        -moz-box-shadow: 3px 0 12px rgba(0, 0, 0, 0.25);
-        -webkit-box-shadow: 3px 0 12px rgba(0, 0, 0, 0.25);
-        box-shadow: 3px 0 12px rgba(0, 0, 0, 0.25);
-      }
-    }
-    &__button {
-      &--close {
-        background-color: red;
-        border: none;
-        color: white;
-        padding: 3px 40px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        cursor: pointer;
-        font-size: 14px;
-      }
-      &--open {
-        background-color: rgb(0, 0, 0);
-        border: none;
-        color: white;
-        padding: 5px 42px;
-        text-align: center;
-        text-decoration: none;
-        display: block;
-        cursor: pointer;
-        font-size: 14px;
-        left: 0;
-        top: 50px;
-        position: absolute;
-      }
-    }
-  }
 }
 
 body {
