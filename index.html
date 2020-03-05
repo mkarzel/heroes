@@ -20,18 +20,29 @@
                 </a>
             </div>
             <div class="header__menu">
-                <div><a href="addHero.html">DODAJ HEROSA</a></div>
+                <div><a href="addHero.html">DODAJ&nbspHEROSA</a></div>
                 <div>&nbsp</div>
-                <div><a href="editHero.html">EDYTUJ HEROSA</a></div>
+                <div><a href="editHero.html">EDYTUJ&nbspHEROSA</a></div>
                 <div>&nbsp</div>
-                <div><a href="deleteHero.html">USUŃ HEROSA</a></div>
+                <div><a href="deleteHero.html">USUŃ&nbspHEROSA</a></div>
                 <div>&nbsp</div>
-                <div><a href="index.html" onclick='clearDB()'>WYCZYŚĆ BAZĘ</a></div>
+                <div><a href="index.html" onclick='clearDB()'>WYCZYŚĆ&nbspBAZĘ</a></div>
                 <div>&nbsp</div>
-                <div><a href="index.html" onclick="loadHeroes()">WCZYTAJ HEROSÓW</a></div>
+                <div><a href="index.html" onclick="loadHeroes()">WCZYTAJ&nbspHEROSÓW</a></div>
             </div>
             <div>
-                <img src="./images/hamburger.svg.png" alt="hamburger" class="header__hamburger" />
+                <img src="./images/hamburger.svg.png" alt="hamburger" class="header__hamburger" onclick="openNav()" />
+            </div>
+            <div id="hamburgerMenu" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="index.html">
+                    <img class="header__logo" src="./images/logo.png">
+                </a>
+                <a href="addHero.html">DODAJ&nbspHEROSA</a>
+                <a href="editHero.html">EDYTUJ&nbspHEROSA</a>
+                <a href="deleteHero.html">USUŃ&nbspHEROSA</a>
+                <a href="index.html" onclick='clearDB()'>WYCZYŚĆ&nbspBAZĘ</a>
+                <a href="index.html" onclick="loadHeroes()">WCZYTAJ&nbspHEROSÓW</a>
             </div>
         </div>
     </div>
