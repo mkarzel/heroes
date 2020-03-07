@@ -5,6 +5,11 @@
   justify-content: space-between;
   width: 100%;
 
+  & a {
+    color: inherit;
+    text-decoration: none;
+  }
+
   &__background {
     width: 100vw;
     max-width: 100%;
@@ -100,6 +105,7 @@
     }
   }
 }
+
 .basket {
   border: 1px solid rgb(15, 10, 90);
   width: 80%;
@@ -231,40 +237,53 @@
 .heroes {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 30px;
-  margin-bottom: 10px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1800px;
+  justify-content: space-evenly;
   width: 80%;
   flex-wrap: wrap;
-  flex-grow: inherit;
 }
 
 .hero {
-  margin-bottom: 15px;
+  margin-bottom: 3vh;
   text-align: center;
-  min-width: 33%;
+  width: 33%;
   @media screen and (min-width: 761px) and (max-width: 1025px) {
-    min-width: 50%;
+    width: 50%;
   }
   @media screen and (max-width: 760px) {
-    min-width: 100%;
+    width: 100%;
   }
-}
+  &__image {
+    cursor: pointer;
+    width: 20vw;
+    height: 30vw;
+    @media screen and (min-width: 761px) and (max-width: 1025px) {
+      width: 30vw;
+      height: 45vw;
+    }
+    @media screen and (max-width: 760px) {
+      width: 40vw;
+      height: 60vw;
+    }
+  }
 
-.clickableImg {
-  cursor: pointer;
-  width: 250px;
-  height: 350px;
-  @media screen and (min-width: 761px) and (max-width: 1025px) {
-    width: 150px;
-    height: 200px;
+  p.thick {
+    font-weight: bold;
+    font-size: 18pt;
+    margin-top: 0;
+    margin-bottom: 0;
+    @media screen and (max-width: 760px) {
+      font-size: 14pt;
+    }
   }
-  @media screen and (max-width: 760px) {
-    width: 100px;
-    height: 150px;
+  
+  p.normal {
+    font-size: 12pt;
+    margin-top: 0;
+    margin-bottom: 0;
+    @media screen and (max-width: 760px) {
+      font-size: 10pt;
+    }
   }
 }
 
@@ -513,42 +532,15 @@
   color: white;
   display: flex;
   justify-content: center;
-  font-size: 1.5vw;
-}
-
-p.thick {
-  font-size: 14pt;
-  @media screen and (min-width: 761px) and (max-width: 1025px) {
-    font-size: 12pt;
-  }
-  @media screen and (max-width: 760px) {
-    font-size: 8pt;
-  }
-  font-weight: bold;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-p.normal {
-  font-size: 11pt;
-  @media screen and (min-width: 761px) and (max-width: 1025px) {
-    font-size: 9pt;
-  }
+  font-size: 15pt;
   @media screen and (max-width: 760px) {
     font-size: 6pt;
   }
-  margin-top: 0;
-  margin-bottom: 0;
 }
 
 body {
   margin: 0;
   font-family: "Open Sans", sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
 }
 
 ::placeholder {

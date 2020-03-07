@@ -64,31 +64,31 @@ window.onload = function () {
 
     document.getElementById("heroes").innerHTML =
         '<div class="hero">\
-        <img class="clickableImg" src="'+ superman.image + '" id="superman">\
+        <img class="hero__image" src="'+ superman.image + '" id="superman">\
         <p class="thick">'+ superman.name + '</p>\
         <p class="normal">Cena wynajmu '+ superman.price + ' zł/h</p>\
     </div>\
     <div class="hero">\
-        <img class="clickableImg" src="'+ hulk.image + '" id="hulk">\
+        <img class="hero__image" src="'+ hulk.image + '" id="hulk">\
         <p class="thick">'+ hulk.name + '</p>\
         <p class="normal">Cena wynajmu '+ hulk.price + ' zł/h</p>\
     </div>\
     <div class="hero">\
-        <img class="clickableImg" src="'+ thor.image + '" id="thor">\
+        <img class="hero__image" src="'+ thor.image + '" id="thor">\
         <p class="thick">'+ thor.name + '</p>\
         <p class="normal">Cena wynajmu '+ thor.price + ' zł/h</p>\
     </div>\
     <div class="hero">\
-        <img class="clickableImg" src="'+ ironman.image + '" id="ironman">\
+        <img class="hero__image" src="'+ ironman.image + '" id="ironman">\
         <p class="thick">'+ ironman.name + '</p>\
         <p class="normal">Cena wynajmu '+ ironman.price + ' zł/h</p>\
     </div>\
     <div class="hero">\
-    <img class="clickableImg" src="'+ potter.image + '" id="potter">\
+    <img class="hero__image" src="'+ potter.image + '" id="potter">\
         <p class="thick">'+ potter.name + '</p>\
         <p class="normal">Cena wynajmu '+ potter.price + ' zł/h</p>\
     </div>\
-    <div class="hero"><img class="clickableImg" src="'+ batman.image + '" id="batman">\
+    <div class="hero"><img class="hero__image" src="'+ batman.image + '" id="batman">\
         <p class="thick">'+ batman.name + '</p>\
         <p class="normal">Cena wynajmu '+ batman.price + ' zł/h</p>\
     </div>';
@@ -220,7 +220,7 @@ loadHeroes = function () {
             for (i = 0; i < myJson.length; i++) {
                 document.getElementById("heroes").innerHTML +=
                     '<div class="hero">\
-                <img class="clickableImg" src="'+ myJson[i].image + '" id="superman">\
+                <img class="hero__image" src="'+ myJson[i].image + '" id="superman">\
                 <p class="thick">'+ myJson[i].name + '</p>\
                 <p class="normal">Cena wynajmu '+ myJson[i].price + ' zł/h</p>\
             </div>\

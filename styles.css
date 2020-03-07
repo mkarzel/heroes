@@ -4,6 +4,9 @@
   display: flex;
   justify-content: space-between;
   width: 100%; }
+  .header a {
+    color: inherit;
+    text-decoration: none; }
   .header__background {
     width: 100vw;
     max-width: 100%; }
@@ -191,39 +194,48 @@
 .heroes {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 30px;
-  margin-bottom: 10px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1800px;
+  justify-content: space-evenly;
   width: 80%;
-  flex-wrap: wrap;
-  flex-grow: inherit; }
+  flex-wrap: wrap; }
 
 .hero {
-  margin-bottom: 15px;
+  margin-bottom: 3vh;
   text-align: center;
-  min-width: 33%; }
+  width: 33%; }
   @media screen and (min-width: 761px) and (max-width: 1025px) {
     .hero {
-      min-width: 50%; } }
+      width: 50%; } }
   @media screen and (max-width: 760px) {
     .hero {
-      min-width: 100%; } }
-
-.clickableImg {
-  cursor: pointer;
-  width: 250px;
-  height: 350px; }
-  @media screen and (min-width: 761px) and (max-width: 1025px) {
-    .clickableImg {
-      width: 150px;
-      height: 200px; } }
-  @media screen and (max-width: 760px) {
-    .clickableImg {
-      width: 100px;
-      height: 150px; } }
+      width: 100%; } }
+  .hero__image {
+    cursor: pointer;
+    width: 20vw;
+    height: 30vw; }
+    @media screen and (min-width: 761px) and (max-width: 1025px) {
+      .hero__image {
+        width: 30vw;
+        height: 45vw; } }
+    @media screen and (max-width: 760px) {
+      .hero__image {
+        width: 40vw;
+        height: 60vw; } }
+  .hero p.thick {
+    font-weight: bold;
+    font-size: 18pt;
+    margin-top: 0;
+    margin-bottom: 0; }
+    @media screen and (max-width: 760px) {
+      .hero p.thick {
+        font-size: 14pt; } }
+  .hero p.normal {
+    font-size: 12pt;
+    margin-top: 0;
+    margin-bottom: 0; }
+    @media screen and (max-width: 760px) {
+      .hero p.normal {
+        font-size: 10pt; } }
 
 .modal {
   display: none;
@@ -438,38 +450,14 @@
   color: white;
   display: flex;
   justify-content: center;
-  font-size: 1.5vw; }
-
-p.thick {
-  font-size: 14pt;
-  font-weight: bold;
-  margin-top: 0;
-  margin-bottom: 0; }
-  @media screen and (min-width: 761px) and (max-width: 1025px) {
-    p.thick {
-      font-size: 12pt; } }
+  font-size: 15pt; }
   @media screen and (max-width: 760px) {
-    p.thick {
-      font-size: 8pt; } }
-
-p.normal {
-  font-size: 11pt;
-  margin-top: 0;
-  margin-bottom: 0; }
-  @media screen and (min-width: 761px) and (max-width: 1025px) {
-    p.normal {
-      font-size: 9pt; } }
-  @media screen and (max-width: 760px) {
-    p.normal {
+    .footer {
       font-size: 6pt; } }
 
 body {
   margin: 0;
   font-family: "Open Sans", sans-serif; }
-
-a {
-  color: inherit;
-  text-decoration: none; }
 
 ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
