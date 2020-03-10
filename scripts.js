@@ -264,20 +264,10 @@ openModal = function () {
     // let
     buttonModal = document.getElementById("buttonModal");
 
-    // When the user clicks the button, open the modal 
-    // heroModal.onclick = function () {
-    //     modal.style.display = "block";
-    // }
-
     // When the user clicks on <span> (x), close the modal
     span.onclick = function () {
         modal.style.display = "none";
     }
-
-    // When the user clicks on the button, close the modal
-    // buttonModal.onclick = function () {
-    //     modal.style.display = "none";
-    // }
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
@@ -296,24 +286,30 @@ displayHeroDetails = function () {
         '<div id="myModal" class="modal">\
         <div class="modal__content">\
             <div class="modal__pic"> \
-                <img src="'+ heroShown.image + '" class="modal__pic--size">\
+                <img src="'+ heroShown.image + '" class="modal__pic">\
             </div>\
-            <div class="modal__right">\
-                <div class="modal__title">\
-                    <p>'+ heroShown.name + '</p>\
-                </div>\
-                <div class="modal__titleBorder"></div>\
-                <div class="modal__description">\
-                    <p>'+ heroShown.description + '</p>\
-                </div>\
-                <div class="modal__price">\
-                    <p>WYNAJEM: '+ heroShown.price + ' ZŁ/H<p>\
+            <div class="modal__infoContainer">\
+                <div>\
+                    <div class="modal__title">\
+                        '+ heroShown.name + '\
+                    </div>\
+                    <div class="modal__titleBorder"></div>\
+                    <div class="modal__description">\
+                        '+ heroShown.description + '\
+                    </div>\
+                    <div class="modal__price">\
+                        WYNAJEM: '+ heroShown.price + ' ZŁ/H\
+                    </div>\
                 </div>\
                 <div id="buttonModal">\
                     <button id="buttonModal" class="modal__button">DODAJ DO KOSZYKA</button>\
                 </div>\
             </div>\
-            <span align="right" class="modal__close">&times;</span>\
+            <div>\
+                <span class="modal__close">\
+                    <img src="./images/close.png" alt="close" class="modal__close"/>\
+                </span>\
+            </div>\
         </div>\
     </div>';
 }
