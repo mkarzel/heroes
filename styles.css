@@ -330,15 +330,14 @@
       .modal__price {
         font-size: 8pt; } }
   .modal__button {
-    bottom: 0;
     background-color: #00aa54;
     border: none;
     color: white;
-    width: 60%;
+    width: 40%;
     text-align: center;
     cursor: pointer;
-    margin-top: 8px;
-    padding: 10px 10px;
+    margin-top: 10px;
+    padding: 10px;
     font-size: 11pt; }
     .modal__button:hover {
       background-color: #095837; }
@@ -410,7 +409,7 @@
     display: inline-block;
     cursor: pointer;
     font-size: 16px;
-    margin-top: 60px; }
+    margin-top: 20px; }
     @media screen and (min-width: 761px) and (max-width: 1025px) {
       .form__button {
         padding: 8px 28px;

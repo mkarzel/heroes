@@ -388,15 +388,14 @@
   }
 
   &__button {
-    bottom: 0;
     background-color: rgb(0, 170, 84);
     border: none;
     color: white;
-    width: 60%;
+    width: 40%;
     text-align: center;
     cursor: pointer;
-    margin-top: 8px;
-    padding: 10px 10px;
+    margin-top: 10px;
+    padding: 10px;
     font-size: 11pt;
     &:hover {
       background-color: rgb(9, 88, 55);
@@ -487,7 +486,7 @@
     display: inline-block;
     cursor: pointer;
     font-size: 16px;
-    margin-top: 60px;
+    margin-top: 20px;
     @media screen and (min-width: 761px) and (max-width: 1025px) {
       padding: 8px 28px;
       margin-top: 20px;

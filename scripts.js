@@ -1,146 +1,126 @@
-clickedHero = null;
-heroShown = null;
+let displayedHero = null;
 basketValue = null;
 basketContent = null
-
-const openNav = () => {
-    document.getElementById("hamburgerMenu").style.width = "100%";
-}
-
-const closeNav = () => {
-    document.getElementById("hamburgerMenu").style.width = "0";
-}
-
-window.onload = function () {
-
-    localStorage.clear();
-    superman = {
+const heroModal = document.querySelector('#heroModal');
+let heroes = [
+    {
         name: 'Superman',
         description: 'Hero description lorem....',
         image: './images/superman.jpg',
         price: '3500',
         isAvailable: true
-    }
-
-    hulk = {
+    },
+    {
         name: 'Hulk',
         description: 'Hero description lorem....',
         image: './images/hulk.jpg',
         price: '2500',
         isAvailable: true
-    }
-
-    thor = {
+    },
+    {
         name: 'Thor',
         description: 'Hero description lorem....',
         image: './images/thor.jpg',
         price: '55000',
         isAvailable: true
-    }
-
-    ironman = {
+    },
+    {
         name: 'Ironman',
         description: 'Hero description lorem....',
         image: './images/ironman.jpg',
         price: '75000',
         isAvailable: false
-    }
-
-    potter = {
+    },
+    {
         name: 'Potter',
         description: 'Hero description lorem....',
         image: './images/potter.jpg',
         price: '125000',
         isAvailable: true
-    }
-
-    batman = {
+    },
+    {
         name: 'Batman',
         description: 'Hero description lorem....',
         image: './images/batman.jpg',
         price: '2000',
         isAvailable: true
     }
+]
 
-    document.getElementById("heroes").innerHTML =
-        '<div class="hero">\
-        <img class="hero__image" src="'+ superman.image + '" id="superman">\
-        <p class="thick">'+ superman.name + '</p>\
-        <p class="normal">Cena wynajmu '+ superman.price + ' zł/h</p>\
-    </div>\
-    <div class="hero">\
-        <img class="hero__image" src="'+ hulk.image + '" id="hulk">\
-        <p class="thick">'+ hulk.name + '</p>\
-        <p class="normal">Cena wynajmu '+ hulk.price + ' zł/h</p>\
-    </div>\
-    <div class="hero">\
-        <img class="hero__image" src="'+ thor.image + '" id="thor">\
-        <p class="thick">'+ thor.name + '</p>\
-        <p class="normal">Cena wynajmu '+ thor.price + ' zł/h</p>\
-    </div>\
-    <div class="hero">\
-        <img class="hero__image" src="'+ ironman.image + '" id="ironman">\
-        <p class="thick">'+ ironman.name + '</p>\
-        <p class="normal">Cena wynajmu '+ ironman.price + ' zł/h</p>\
-    </div>\
-    <div class="hero">\
-    <img class="hero__image" src="'+ potter.image + '" id="potter">\
-        <p class="thick">'+ potter.name + '</p>\
-        <p class="normal">Cena wynajmu '+ potter.price + ' zł/h</p>\
-    </div>\
-    <div class="hero"><img class="hero__image" src="'+ batman.image + '" id="batman">\
-        <p class="thick">'+ batman.name + '</p>\
-        <p class="normal">Cena wynajmu '+ batman.price + ' zł/h</p>\
-    </div>';
+const openNav = () => {
+    document.querySelector("#hamburgerMenu").style.width = "100%";
+}
 
-    document.getElementById("superman").onclick = function () {
-        clickedHero = "superman";
-        heroShown = superman;
-        displayHeroDetails();
-        openModal();
-        modal.style.display = "block";
+const closeNav = () => {
+    document.querySelector("#hamburgerMenu").style.width = "0";
+}
+
+window.onload = () => {
+
+    localStorage.clear();
+
+    for (let i = 0; i < heroes.length; i++) {
+        document.querySelector("#heroes").innerHTML +=
+            '<div class="hero">\
+            <img class="hero__image" src="'+ heroes[i].image + '" id="' + heroes[i].name + '">\
+            <p class="thick">'+ heroes[i].name + '</p>\
+            <p class="normal">Cena wynajmu '+ heroes[i].price + ' zł/h</p>\
+        </div>';
     }
 
-    document.getElementById("hulk").onclick = function () {
-        clickedHero = "hulk";
-        heroShown = hulk;
-        displayHeroDetails();
-        openModal();
-        modal.style.display = "block";
+    for (let i = 0; i < heroes.length; i++) {
+        document.getElementById(heroes[i].name).onclick = () => {
+            displayedHero = heroes[i];
+            openHeroModal();
+            heroModal.style.display = "block";
+        }
+    }
+};
+
+const openHeroModal = () => {
+
+    document.querySelector("#heroModal").innerHTML =
+        '<div class="modal__content">\
+            <div class="modal__pic"> \
+                <img src="'+ displayedHero.image + '" class="modal__pic">\
+            </div>\
+            <div class="modal__infoContainer">\
+                <div>\
+                    <div class="modal__title">\
+                        '+ displayedHero.name + '\
+                    </div>\
+                    <div class="modal__titleBorder"></div>\
+                    <div class="modal__description">\
+                        '+ displayedHero.description + '\
+                    </div>\
+                    <div class="modal__price">\
+                        WYNAJEM: '+ displayedHero.price + ' ZŁ/H\
+                    </div>\
+                </div>\
+                <div>\
+                    <button class="modal__button">DODAJ DO KOSZYKA</button>\
+                </div>\
+            </div>\
+            <div "modal__close">\
+                <img src="./images/close.png" alt="close" class="modal__close"/>\
+            </div>\
+        </div>';
+
+   
+    const closeButton = document.querySelector(".modal__close");
+    closeButton.onclick = () => {
+        heroModal.style.display = "none";
+    }
+    window.onclick = (event) => {
+        if (event.target === heroModal) {
+            heroModal.style.display = "none";
+        }
     }
 
-    document.getElementById("thor").onclick = function () {
-        clickedHero = "thor";
-        heroShown = thor;
-        displayHeroDetails();
-        openModal();
-        modal.style.display = "block";
+    const addToBasketButton = document.querySelector(".modal__button");
+    addToBasketButton.onclick = () => {
+        addToBasket();
     }
-
-    document.getElementById("ironman").onclick = function () {
-        clickedHero = "ironman";
-        heroShown = ironman;
-        displayHeroDetails();
-        openModal();
-        modal.style.display = "block";
-    }
-
-    document.getElementById("potter").onclick = function () {
-        clickedHero = "potter";
-        heroShown = potter;
-        displayHeroDetails();
-        openModal();
-        modal.style.display = "block";
-    }
-
-    document.getElementById("batman").onclick = function () {
-        clickedHero = "batman";
-        heroShown = batman;
-        displayHeroDetails();
-        openModal();
-        modal.style.display = "block";
-    }
-
 };
 
 clearDB = function () {
@@ -251,102 +231,39 @@ heroesToSelect = function () {
         });
 }
 
-
-openModal = function () {
-    // Get the modal const
-    modal = document.getElementById('myModal');
-
-    // Get the hero that opens the modal const 
-    heroModal = document.getElementById(clickedHero);
-
-    // Get the <span> element that closes the modal const
-    span = document.getElementsByClassName("modal__close")[0];
-    // let
-    buttonModal = document.getElementById("buttonModal");
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function () {
-        modal.style.display = "none";
-    }
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-
-    document.getElementById("buttonModal").onclick = function () {
-        addToBasket();
-    }
-};
-
-displayHeroDetails = function () {
-    document.getElementById("heroWindow").innerHTML =
-        '<div id="myModal" class="modal">\
-        <div class="modal__content">\
-            <div class="modal__pic"> \
-                <img src="'+ heroShown.image + '" class="modal__pic">\
-            </div>\
-            <div class="modal__infoContainer">\
-                <div>\
-                    <div class="modal__title">\
-                        '+ heroShown.name + '\
-                    </div>\
-                    <div class="modal__titleBorder"></div>\
-                    <div class="modal__description">\
-                        '+ heroShown.description + '\
-                    </div>\
-                    <div class="modal__price">\
-                        WYNAJEM: '+ heroShown.price + ' ZŁ/H\
-                    </div>\
-                </div>\
-                <div id="buttonModal">\
-                    <button id="buttonModal" class="modal__button">DODAJ DO KOSZYKA</button>\
-                </div>\
-            </div>\
-            <div>\
-                <span class="modal__close">\
-                    <img src="./images/close.png" alt="close" class="modal__close"/>\
-                </span>\
-            </div>\
-        </div>\
-    </div>';
-}
-
 addToBasket = function () {
 
-    if (heroShown.isAvailable == true) {
+    if (displayedHero.isAvailable == true) {
         document.getElementById("basket__content").innerHTML +=
-            '<div id="' + heroShown.name + '" class="basket__item">\
+            '<div id="' + displayedHero.name + '" class="basket__item">\
             <div>\
-                <img class="basket__itemPic" src="'+ heroShown.image + '">\
+                <img class="basket__itemPic" src="'+ displayedHero.image + '">\
             </div>\
             <div class="basket__right">\
                 <div class="basket__itemHeader">\
-                    <p>'+ heroShown.name + '</p>\
+                    <p>'+ displayedHero.name + '</p>\
                 </div>\
                 <div class="basket__itemDescription">\
-                    <p>'+ heroShown.description + '</p>\
+                    <p>'+ displayedHero.description + '</p>\
                 </div>\
                 <div>\
-                    <button id="basket__itemButton'+ heroShown.name + '" class="basket__itemButton">USUŃ Z KOSZYKA | &times;</button>\
+                    <button id="basket__itemButton'+ displayedHero.name + '" class="basket__itemButton">USUŃ Z KOSZYKA | &times;</button>\
                 </div>\
             </div>\
         </div>'
 
-        heroShown.isAvailable = false;
-        basketValue = parseInt(heroShown.price) + basketValue
-        console.log(heroShown.name + " " + heroShown.isAvailable)
+        displayedHero.isAvailable = false;
+        basketValue = parseInt(displayedHero.price) + basketValue
+        console.log(displayedHero.name + " " + displayedHero.isAvailable)
         console.log(basketValue)
         document.getElementById("basketValue").innerHTML = basketValue + " zł"
         localStorage.setItem("basketValue", basketValue);
-        localStorage.setItem(heroShown.name, heroShown)
+        localStorage.setItem(displayedHero.name, displayedHero)
     }
     else {
         alert("Nie można dodać do koszyka");
     }
-    modal.style.display = "none";
+    heroModal.style.display = "none";
 
     if (document.getElementById("basket__itemButtonSuperman"))
         document.getElementById("basket__itemButtonSuperman").onclick = function () {
@@ -408,5 +325,3 @@ addToBasket = function () {
             localStorage.removeItem(batman.name)
         }
 };
-
-
