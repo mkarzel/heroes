@@ -61,21 +61,17 @@
   transition: 0.5s;
   text-align: center;
   padding: 0; }
-  @media screen and (max-height: 450px) {
-    .sidenav {
-      padding: 0; } }
   .sidenav a {
     padding: 6vw;
-    text-decoration: none;
-    font-size: 8vw;
+    font-size: 7vw;
     color: #a79f9f;
     display: block;
     transition: 0.3s; }
-    @media screen and (max-height: 450px) {
+    @media screen and (min-width: 450px) {
       .sidenav a {
         padding: 1vw;
         font-size: 3vw; } }
-    .sidenav a:hover {
+    .sidenav a :hover {
       color: #f1f1f1; }
   .sidenav .closebtn {
     position: absolute;
@@ -83,7 +79,7 @@
     right: 0;
     padding-top: 0;
     font-size: 15vw; }
-    @media screen and (max-height: 450px) {
+    @media screen and (min-width: 450px) {
       .sidenav .closebtn {
         font-size: 15vh;
         padding-right: 6vh; } }
