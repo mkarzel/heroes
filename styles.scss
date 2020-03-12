@@ -1,3 +1,9 @@
+
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
 .header {
   top: 0;
   position: absolute;
@@ -104,50 +110,35 @@
 
 .basket {
   border: 1px solid rgb(15, 10, 90);
-  width: 80%;
-  max-width: 1600px;
-  @media screen and (min-width: 761px) and (max-width: 1025px) {
-    max-width: 1026px;
-    min-width: none;
-  }
-  @media screen and (max-width: 760px) {
-    max-width: 760px;
-    min-width: none;
-  }
-  margin-top: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  justify-content: space-between;
+  width: 80vw;
+  margin: 10px auto;
+  padding: 10px;
 
   &__header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
     font-size: 22pt;
     @media screen and (min-width: 761px) and (max-width: 1025px) {
       font-size: 15pt;
     }
     @media screen and (max-width: 760px) {
-      font-size: 14pt;
+      font-size: 13pt;
     }
-    font-weight: bold;
+  }
+  
+  &__price {
     display: flex;
-    justify-content: space-between;
-    margin-left: 10px;
+  }
+
+  &__priceFont {
+    color: red;
   }
 
   &__headerBorder {
     border-bottom: 1px solid rgba(100, 97, 97, 0.651);
-    margin-left: 10px;
-    margin-bottom: 20px;
-    width: 20%;
-  }
-
-  &__empty {
-    font-size: 14pt;
-    color: rgb(201, 193, 193);
-    text-align: center;
-  }
-
-  &__price {
-    display: flex;
+    margin-bottom: 10px;
+    width: 25%;
   }
 
   &__content {
@@ -157,42 +148,46 @@
 
   &__item {
     display: flex;
-    width: 33%;
+    padding-top: 20px;
+    width: 33.3%;
     @media screen and (min-width: 761px) and (max-width: 1025px) {
       width: 50%;
     }
     @media screen and (max-width: 760px) {
-      justify-items: center;
       width: 100%;
     }
   }
 
-  &__right {
+  &__textSide {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     margin-left: 10px;
     margin-right: 10px;
-    margin-top: -10px;
+    width: 100%;
+    height: 100%;
   }
 
-  &__itemPic {
-    bottom: 0;
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-bottom: 10px;
-    height: 150px;
-    width: 150px;
+  &__picSide {
+    width: 10vw;
+    height: 15vw;
+    @media screen and (min-width: 761px) and (max-width: 1025px) {
+      width: 15vw;
+      height: 22.5vw;
+    }
+    @media screen and (max-width: 760px) {
+      width: 30vw;
+      height: 45vw;
+    }
   }
 
   &__itemHeader {
-    padding-bottom: 0;
-    margin-top: 0px;
-    margin-bottom: 0;
-    margin-left: 10px;
+    font-weight: bold;
+    color: gray;
     font-size: 14pt;
     @media screen and (max-width: 1025px) {
       font-size: 12pt;
     }
-    font-weight: bold;
-    color: gray;
   }
 
   &__itemDescription {
@@ -202,31 +197,24 @@
     }
     font-weight: bold;
     color: gray;
-    margin-top: -10px;
-    margin-bottom: 0;
-    margin-left: 10px;
   }
 
   &__itemButton {
     background-color: rgb(192, 49, 49);
+    &:hover {
+      background-color: rgb(134, 21, 28);
+    }
     border: none;
     color: white;
-    padding: 10px 24px;
-    @media screen and (max-width: 1025px) {
-      padding: 6px 12px;
-    }
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
+    width: 80%;
     cursor: pointer;
-    font-size: 8px;
-    margin-left: 10px;
-  }
-
-  &__priceFont {
-    color: red;
-    margin-left: 5px;
-    margin-right: 10px;
+    font-size: 9pt;
+    font-weight: bold;
+    padding: 10px;
+    @media screen and (max-width: 1025px) {
+      padding: 6px;
+      font-size: 6pt;
+    }
   }
 }
 
@@ -284,15 +272,15 @@
 }
 
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0, 0, 0, 0.8); 
 
   &__content {
     display: flex;
@@ -385,17 +373,17 @@
 
   &__button {
     background-color: rgb(0, 170, 84);
+    &:hover {
+      background-color: rgb(9, 88, 55);
+    }
     border: none;
     color: white;
-    width: 40%;
+    width: 60%;
     text-align: center;
     cursor: pointer;
     margin-top: 10px;
     padding: 10px;
     font-size: 11pt;
-    &:hover {
-      background-color: rgb(9, 88, 55);
-    }
   }
 
   &__close {
@@ -403,14 +391,11 @@
     right: 0;
     top: 0;
     color: #929292;
+    cursor: pointer;
+    padding: 10px;
     height: 20px;
     @media screen and (max-width: 760px) {
       height: 20px;
-    }
-    padding: 10px;
-    &:hover,
-    &:focus {
-      cursor: pointer;
     }
   }
 }
@@ -506,11 +491,6 @@
   @media screen and (max-width: 760px) {
     font-size: 6pt;
   }
-}
-
-body {
-  margin: 0;
-  font-family: "Open Sans", sans-serif;
 }
 
 ::placeholder {
