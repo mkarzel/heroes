@@ -55,7 +55,7 @@ const closeNav = () => {
     document.querySelector("#hamburgerMenu").style.width = "0";
 }
 
-window.onload = () => {
+const displayHeroes = () => {
 
     localStorage.clear();
 

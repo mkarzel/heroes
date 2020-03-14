@@ -10,7 +10,7 @@
 </head>
 
 <body onload="heroesToSelect()">
-    <div>
+    <div class="formPageContainer">
         <div class="header--form">
             <div class="header">
                 <div>
@@ -46,27 +46,25 @@
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-    </div>
-    <div class="form">
-        <div>
-            <H1 align="center">Usuń Herosa</H1>
-        </div>
-        <div align="center">
+        <div class="form">
+            <div class="form__header">
+                USUŃ HEROSA
+            </div>
             <div>
-                <select class="form__select" id="heroesSelect">
-                </select>
+                <div>
+                    <select class="form__select" id="heroesSelect">
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button class="form__button" onclick="deleteHeroFromDB()">Submit</button>
             </div>
         </div>
-        <div align="center">
-            <button class="form__button" onclick="deleteHeroFromDB()">Submit</button>
+        <div class="footer">
+            <p>Need a Hero - Pure JS/CSS Aplikacja do ćwiczenia nabytej wiedzy o JavaScript</p>
         </div>
     </div>
-    <div class="footer">
-        <p>Need a Hero - Pure JS/CSS Aplikacja do ćwiczenia nabytej wiedzy o JavaScript</p>
-    </div>
-
     <script src="scripts.js"></script>
 </body>
+
 </html>

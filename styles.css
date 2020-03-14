@@ -329,72 +329,68 @@ body {
       .modal__close {
         height: 20px; } }
 
+.formPageContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+
 .form {
   width: 40%;
-  height: 100%;
   padding: 50px;
-  max-width: 1600px;
-  background: #ffffff;
   margin: 100px auto;
+  text-align: center;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
   -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
   -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22); }
   @media screen and (min-width: 761px) and (max-width: 1025px) {
     .form {
-      width: 60%;
-      height: 80%;
-      padding: 20px;
-      margin: 30px auto; } }
+      width: 60%; } }
   @media screen and (max-width: 760px) {
     .form {
       width: 60%;
-      height: 100%;
-      padding: 10px;
-      margin: 20px auto; } }
-  .form__input[type="text"], .form__input[type="date"], .form__input[type="datetime"], .form__input[type="email"], .form__input[type="number"], .form__input[type="search"], .form__input[type="time"], .form__input[type="url"], .form__input[type="password"], .form__select {
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    outline: none;
+      padding: 40px;
+      margin: 50px auto; } }
+  .form__header {
+    font-weight: bold;
+    font-size: 20pt; }
+    @media screen and (max-width: 760px) {
+      .form__header {
+        font-size: 16pt; } }
+  .form__input, .form__select {
     display: block;
     width: 100%;
     border: none;
+    outline: none;
     border-bottom: 1px solid rgba(160, 145, 145, 0.651);
-    background: transparent;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    height: 45px; }
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    font-size: 14pt; }
     @media screen and (min-width: 761px) and (max-width: 1025px) {
-      .form__input[type="text"], .form__input[type="date"], .form__input[type="datetime"], .form__input[type="email"], .form__input[type="number"], .form__input[type="search"], .form__input[type="time"], .form__input[type="url"], .form__input[type="password"], .form__select {
-        margin-top: 20px;
-        margin-bottom: 20px;
-        height: 35px; } }
+      .form__input, .form__select {
+        font-size: 12pt; } }
     @media screen and (max-width: 760px) {
-      .form__input[type="text"], .form__input[type="date"], .form__input[type="datetime"], .form__input[type="email"], .form__input[type="number"], .form__input[type="search"], .form__input[type="time"], .form__input[type="url"], .form__input[type="password"], .form__select {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        height: 25px; } }
+      .form__input, .form__select {
+        font-size: 10pt; } }
   .form__button {
     background-color: #5f92c9;
     border: none;
     color: white;
-    padding: 12px 42px;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
     cursor: pointer;
-    font-size: 16px;
-    margin-top: 20px; }
-    @media screen and (min-width: 761px) and (max-width: 1025px) {
-      .form__button {
-        padding: 8px 28px;
-        margin-top: 20px; } }
-    @media screen and (max-width: 760px) {
-      .form__button {
-        padding: 4px 14px;
-        margin-top: 20px; } }
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 11pt;
+    font-weight: bold;
+    width: 20%; }
     .form__button:hover {
       background-color: #34669c; }
+    @media screen and (max-width: 1025px) {
+      .form__button {
+        width: 40%; } }
+  .form ::placeholder {
+    color: #6b6363;
+    text-align: center; }
 
 .footer {
   background-color: #261d52;
@@ -405,9 +401,3 @@ body {
   @media screen and (max-width: 760px) {
     .footer {
       font-size: 6pt; } }
-
-::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #b1acac;
-  opacity: 1;
-  /* Firefox */ }

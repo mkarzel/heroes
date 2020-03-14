@@ -400,85 +400,78 @@ body {
   }
 }
 
+.formPageContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .form {
   width: 40%;
-  height: 100%;
   padding: 50px;
-  max-width: 1600px;
-  background: #ffffff;
   margin: 100px auto;
+  text-align: center;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
   -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
   -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
   @media screen and (min-width: 761px) and (max-width: 1025px) {
     width: 60%;
-    height: 80%;
-    padding: 20px;
-    margin: 30px auto;
   }
   @media screen and (max-width: 760px) {
     width: 60%;
-    height: 100%;
-    padding: 10px;
-    margin: 20px auto;
+    padding: 40px;
+    margin: 50px auto;
   }
 
-  &__input[type="text"],
-  &__input[type="date"],
-  &__input[type="datetime"],
-  &__input[type="email"],
-  &__input[type="number"],
-  &__input[type="search"],
-  &__input[type="time"],
-  &__input[type="url"],
-  &__input[type="password"],
+  &__header {
+    font-weight: bold;
+    font-size: 20pt;
+    @media screen and (max-width: 760px) {
+      font-size: 16pt;
+    }
+  }
+
+  &__input,
   &__select {
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    outline: none;
     display: block;
     width: 100%;
     border: none;
+    outline: none;
     border-bottom: 1px solid rgba(160, 145, 145, 0.651);
-    background: transparent;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    height: 45px;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    font-size: 14pt;
     @media screen and (min-width: 761px) and (max-width: 1025px) {
-      margin-top: 20px;
-      margin-bottom: 20px;
-      height: 35px;
+      font-size: 12pt;
     }
     @media screen and (max-width: 760px) {
-      margin-top: 10px;
-      margin-bottom: 10px;
-      height: 25px;
+      font-size: 10pt;
     }
   }
 
   &__button {
     background-color: rgb(95, 146, 201);
-    border: none;
-    color: white;
-    padding: 12px 42px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 20px;
-    @media screen and (min-width: 761px) and (max-width: 1025px) {
-      padding: 8px 28px;
-      margin-top: 20px;
-    }
-    @media screen and (max-width: 760px) {
-      padding: 4px 14px;
-      margin-top: 20px;
-    }
     &:hover {
       background-color: rgb(52, 102, 156);
     }
+    border: none;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 11pt;
+    font-weight: bold;
+    width: 20%;
+    @media screen and (max-width: 1025px) {
+      width: 40%;
+    }
+  }
+
+  ::placeholder {
+    color: rgb(107, 99, 99);
+    text-align: center;
   }
 }
 
@@ -493,8 +486,3 @@ body {
   }
 }
 
-::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: rgb(177, 172, 172);
-  opacity: 1; /* Firefox */
-}
