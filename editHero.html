@@ -2,17 +2,15 @@
 <html lang="en">
 
 <head>
-    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <script src="scripts.js"></script>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <title>HEROES</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
 </head>
 
 <body onload="heroesToSelect()">
-    <div>
+    <div class="formPageContainer">
         <div class="header--form">
             <div class="header">
                 <div>
@@ -32,7 +30,8 @@
                     <div><a href="index.html" onclick="loadHeroes()">WCZYTAJ&nbspHEROSÓW</a></div>
                 </div>
                 <div>
-                    <img src="./images/hamburger.svg.png" alt="hamburger" class="header__hamburger" onclick="openNav()" />
+                    <img src="./images/hamburger.svg.png" alt="hamburger" class="header__hamburger"
+                        onclick="openNav()" />
                 </div>
                 <div id="hamburgerMenu" class="sidenav">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -47,37 +46,32 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="form">
-        <div>
-            <H1 align="center">Edytuj Herosa</H1>
+        <div class="form">
+            <div class="form__header">
+                EDYTUJ HEROSA
+            </div>
+            <div>
+                <select class="form__select" id="heroesSelect">
+                </select>
+            </div>
+            <div>
+                <input class="form__input" type="text" id="heroPic" placeholder="ADRES/NAZWA ZDJĘCIA">
+            </div>
+            <div>
+                <input class="form__input" type="text" id="heroPrice" placeholder="CENA WYNAJMU /H">
+            </div>
+            <div>
+                <input class="form__input" type="text" placeholder="OPIS BOHATERA">
+            </div>
+            <div>
+                <button class="form__button" onclick="editHeroInDB()">Submit</button>
+            </div>
         </div>
-        <div>
-            <select class="form__select" id="heroesSelect">
-            </select>
+        <div class="footer">
+            <p>Need a Hero - Pure JS/CSS Aplikacja do ćwiczenia nabytej wiedzy o JavaScript</p>
         </div>
-        <!-- <div>
-            <input class="form__input" type="text" id="heroName" placeholder="Nazwa Bohatera">
-        </div> -->
-        <div>
-            <input class="form__input" type="text" id="heroPic" placeholder="Adres/nazwa zdjęcia">
-        </div>
-        <div>
-            <input class="form__input" type="text" id="heroPrice" placeholder="Cena wynajmu /h">
-        </div>
-        <div>
-            <input class="form__input" type="text" placeholder="Opis Bohatera">
-        </div>
-        <div align="center">
-            <button class="form__button" onclick="editHeroInDB()">Submit</button>
-        </div>
-    </div>
-    <div class="footer">
-        <p>Need a Hero - Pure JS/CSS Aplikacja do ćwiczenia nabytej wiedzy o JavaScript</p>
     </div>
 
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
     <script src="scripts.js"></script>
 </body>
 

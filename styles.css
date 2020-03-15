@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif; }
+
 .header {
   top: 0;
   position: absolute;
@@ -61,21 +65,17 @@
   transition: 0.5s;
   text-align: center;
   padding: 0; }
-  @media screen and (max-height: 450px) {
-    .sidenav {
-      padding: 0; } }
   .sidenav a {
     padding: 6vw;
-    text-decoration: none;
-    font-size: 8vw;
+    font-size: 7vw;
     color: #a79f9f;
     display: block;
     transition: 0.3s; }
-    @media screen and (max-height: 450px) {
+    @media screen and (min-width: 450px) {
       .sidenav a {
         padding: 1vw;
         font-size: 3vw; } }
-    .sidenav a:hover {
+    .sidenav a :hover {
       color: #f1f1f1; }
   .sidenav .closebtn {
     position: absolute;
@@ -83,92 +83,78 @@
     right: 0;
     padding-top: 0;
     font-size: 15vw; }
-    @media screen and (max-height: 450px) {
+    @media screen and (min-width: 450px) {
       .sidenav .closebtn {
         font-size: 15vh;
         padding-right: 6vh; } }
 
 .basket {
   border: 1px solid #0f0a5a;
-  width: 80%;
-  max-width: 1600px;
-  margin-top: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  justify-content: space-between; }
-  @media screen and (min-width: 761px) and (max-width: 1025px) {
-    .basket {
-      max-width: 1026px;
-      min-width: none; } }
-  @media screen and (max-width: 760px) {
-    .basket {
-      max-width: 760px;
-      min-width: none; } }
+  width: 80vw;
+  margin: 10px auto;
+  padding: 10px; }
   .basket__header {
-    font-size: 22pt;
-    font-weight: bold;
     display: flex;
     justify-content: space-between;
-    margin-left: 10px; }
+    font-weight: bold;
+    font-size: 22pt; }
     @media screen and (min-width: 761px) and (max-width: 1025px) {
       .basket__header {
         font-size: 15pt; } }
     @media screen and (max-width: 760px) {
       .basket__header {
-        font-size: 14pt; } }
-  .basket__headerBorder {
-    border-bottom: 1px solid rgba(100, 97, 97, 0.651);
-    margin-left: 10px;
-    margin-bottom: 20px;
-    width: 20%; }
-  .basket__empty {
-    font-size: 14pt;
-    color: #c9c1c1;
-    text-align: center; }
+        font-size: 13pt; } }
   .basket__price {
     display: flex; }
+  .basket__priceFont {
+    color: red; }
+  .basket__headerBorder {
+    border-bottom: 1px solid rgba(100, 97, 97, 0.651);
+    margin-bottom: 10px;
+    width: 25%; }
   .basket__content {
     display: flex;
     flex-wrap: wrap; }
   .basket__item {
     display: flex;
-    width: 33%; }
+    padding-top: 20px;
+    width: 33.3%; }
     @media screen and (min-width: 761px) and (max-width: 1025px) {
       .basket__item {
         width: 50%; } }
     @media screen and (max-width: 760px) {
       .basket__item {
-        justify-items: center;
         width: 100%; } }
-  .basket__right {
+  .basket__textSide {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     margin-left: 10px;
     margin-right: 10px;
-    margin-top: -10px; }
-  .basket__itemPic {
-    bottom: 0;
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-bottom: 10px;
-    height: 150px;
-    width: 150px; }
+    width: 100%;
+    height: 100%; }
+  .basket__picSide {
+    width: 10vw;
+    height: 15vw; }
+    @media screen and (min-width: 761px) and (max-width: 1025px) {
+      .basket__picSide {
+        width: 15vw;
+        height: 22.5vw; } }
+    @media screen and (max-width: 760px) {
+      .basket__picSide {
+        width: 30vw;
+        height: 45vw; } }
   .basket__itemHeader {
-    padding-bottom: 0;
-    margin-top: 0px;
-    margin-bottom: 0;
-    margin-left: 10px;
-    font-size: 14pt;
     font-weight: bold;
-    color: gray; }
+    color: gray;
+    font-size: 14pt; }
     @media screen and (max-width: 1025px) {
       .basket__itemHeader {
         font-size: 12pt; } }
   .basket__itemDescription {
     font-size: 8pt;
     font-weight: bold;
-    color: gray;
-    margin-top: -10px;
-    margin-bottom: 0;
-    margin-left: 10px; }
+    color: gray; }
     @media screen and (max-width: 1025px) {
       .basket__itemDescription {
         font-size: 6pt; } }
@@ -176,20 +162,17 @@
     background-color: #c03131;
     border: none;
     color: white;
-    padding: 10px 24px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
+    width: 80%;
     cursor: pointer;
-    font-size: 8px;
-    margin-left: 10px; }
+    font-size: 9pt;
+    font-weight: bold;
+    padding: 10px; }
+    .basket__itemButton:hover {
+      background-color: #86151c; }
     @media screen and (max-width: 1025px) {
       .basket__itemButton {
-        padding: 6px 12px; } }
-  .basket__priceFont {
-    color: red;
-    margin-left: 5px;
-    margin-right: 10px; }
+        padding: 6px;
+        font-size: 6pt; } }
 
 .heroes {
   margin-left: auto;
@@ -239,21 +222,14 @@
 
 .modal {
   display: none;
-  /* Hidden by default */
   position: fixed;
-  /* Stay in place */
   z-index: 1;
-  /* Sit on top */
   left: 0;
   top: 0;
   width: 100%;
-  /* Full width */
   height: 100%;
-  /* Full height */
   overflow: auto;
-  /* Enable scroll if needed */
-  background-color: rgba(0, 0, 0, 0.8);
-  /* Black w/ opacity */ }
+  background-color: rgba(0, 0, 0, 0.8); }
   .modal__content {
     display: flex;
     position: absolute;
@@ -333,7 +309,7 @@
     background-color: #00aa54;
     border: none;
     color: white;
-    width: 40%;
+    width: 60%;
     text-align: center;
     cursor: pointer;
     margin-top: 10px;
@@ -346,80 +322,75 @@
     right: 0;
     top: 0;
     color: #929292;
-    height: 20px;
-    padding: 10px; }
+    cursor: pointer;
+    padding: 10px;
+    height: 20px; }
     @media screen and (max-width: 760px) {
       .modal__close {
         height: 20px; } }
-    .modal__close:hover, .modal__close:focus {
-      cursor: pointer; }
+
+.formPageContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
 
 .form {
   width: 40%;
-  height: 100%;
   padding: 50px;
-  max-width: 1600px;
-  background: #ffffff;
   margin: 100px auto;
+  text-align: center;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
   -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
   -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22); }
   @media screen and (min-width: 761px) and (max-width: 1025px) {
     .form {
-      width: 60%;
-      height: 80%;
-      padding: 20px;
-      margin: 30px auto; } }
+      width: 60%; } }
   @media screen and (max-width: 760px) {
     .form {
       width: 60%;
-      height: 100%;
-      padding: 10px;
-      margin: 20px auto; } }
-  .form__input[type="text"], .form__input[type="date"], .form__input[type="datetime"], .form__input[type="email"], .form__input[type="number"], .form__input[type="search"], .form__input[type="time"], .form__input[type="url"], .form__input[type="password"], .form__select {
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    outline: none;
+      padding: 40px;
+      margin: 50px auto; } }
+  .form__header {
+    font-weight: bold;
+    font-size: 20pt; }
+    @media screen and (max-width: 760px) {
+      .form__header {
+        font-size: 16pt; } }
+  .form__input, .form__select {
     display: block;
     width: 100%;
     border: none;
+    outline: none;
     border-bottom: 1px solid rgba(160, 145, 145, 0.651);
-    background: transparent;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    height: 45px; }
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    font-size: 14pt; }
     @media screen and (min-width: 761px) and (max-width: 1025px) {
-      .form__input[type="text"], .form__input[type="date"], .form__input[type="datetime"], .form__input[type="email"], .form__input[type="number"], .form__input[type="search"], .form__input[type="time"], .form__input[type="url"], .form__input[type="password"], .form__select {
-        margin-top: 20px;
-        margin-bottom: 20px;
-        height: 35px; } }
+      .form__input, .form__select {
+        font-size: 12pt; } }
     @media screen and (max-width: 760px) {
-      .form__input[type="text"], .form__input[type="date"], .form__input[type="datetime"], .form__input[type="email"], .form__input[type="number"], .form__input[type="search"], .form__input[type="time"], .form__input[type="url"], .form__input[type="password"], .form__select {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        height: 25px; } }
+      .form__input, .form__select {
+        font-size: 10pt; } }
   .form__button {
     background-color: #5f92c9;
     border: none;
     color: white;
-    padding: 12px 42px;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
     cursor: pointer;
-    font-size: 16px;
-    margin-top: 20px; }
-    @media screen and (min-width: 761px) and (max-width: 1025px) {
-      .form__button {
-        padding: 8px 28px;
-        margin-top: 20px; } }
-    @media screen and (max-width: 760px) {
-      .form__button {
-        padding: 4px 14px;
-        margin-top: 20px; } }
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 11pt;
+    font-weight: bold;
+    width: 20%; }
     .form__button:hover {
       background-color: #34669c; }
+    @media screen and (max-width: 1025px) {
+      .form__button {
+        width: 40%; } }
+  .form ::placeholder {
+    color: #6b6363;
+    text-align: center; }
 
 .footer {
   background-color: #261d52;
@@ -430,13 +401,3 @@
   @media screen and (max-width: 760px) {
     .footer {
       font-size: 6pt; } }
-
-body {
-  margin: 0;
-  font-family: "Open Sans", sans-serif; }
-
-::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #b1acac;
-  opacity: 1;
-  /* Firefox */ }

@@ -5,7 +5,7 @@ const heroModal = document.querySelector('#heroModal');
 let heroes = [
     {
         name: 'Superman',
-        description: 'Hero description lorem....',
+        description: 'Hero description Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         image: './images/superman.jpg',
         price: '3500',
         isAvailable: true
@@ -55,7 +55,7 @@ const closeNav = () => {
     document.querySelector("#hamburgerMenu").style.width = "0";
 }
 
-window.onload = () => {
+const displayHeroes = () => {
 
     localStorage.clear();
 
@@ -81,9 +81,7 @@ const openHeroModal = () => {
 
     document.querySelector("#heroModal").innerHTML =
         '<div class="modal__content">\
-            <div class="modal__pic"> \
-                <img src="'+ displayedHero.image + '" class="modal__pic">\
-            </div>\
+            <img src="'+ displayedHero.image + '" class="modal__pic">\
             <div class="modal__infoContainer">\
                 <div>\
                     <div class="modal__title">\
@@ -98,12 +96,10 @@ const openHeroModal = () => {
                     </div>\
                 </div>\
                 <div>\
-                    <button class="modal__button">DODAJ DO KOSZYKA</button>\
+                    <button class="modal__button">DODAJ&nbspDO&nbspKOSZYKA</button>\
                 </div>\
             </div>\
-            <div "modal__close">\
-                <img src="./images/close.png" alt="close" class="modal__close"/>\
-            </div>\
+            <img src="./images/close.png" alt="close" class="modal__close"/>\
         </div>';
 
    
@@ -234,21 +230,19 @@ heroesToSelect = function () {
 addToBasket = function () {
 
     if (displayedHero.isAvailable == true) {
-        document.getElementById("basket__content").innerHTML +=
-            '<div id="' + displayedHero.name + '" class="basket__item">\
-            <div>\
-                <img class="basket__itemPic" src="'+ displayedHero.image + '">\
-            </div>\
-            <div class="basket__right">\
-                <div class="basket__itemHeader">\
-                    <p>'+ displayedHero.name + '</p>\
-                </div>\
-                <div class="basket__itemDescription">\
-                    <p>'+ displayedHero.description + '</p>\
-                </div>\
+        document.querySelector(".basket__content").innerHTML +=
+        '<div id="' + displayedHero.name + '" class="basket__item">\
+            <img class="basket__picSide" src="'+ displayedHero.image + '">\
+            <div class="basket__textSide">\
                 <div>\
-                    <button id="basket__itemButton'+ displayedHero.name + '" class="basket__itemButton">USUŃ Z KOSZYKA | &times;</button>\
+                    <div class="basket__itemHeader">\
+                        '+ displayedHero.name + '\
+                    </div>\
+                    <div class="basket__itemDescription">\
+                        <p>'+ displayedHero.description + '</p>\
+                    </div>\
                 </div>\
+                <button id="basket__itemButton'+ displayedHero.name + '" class="basket__itemButton">USUŃ&nbspZ&nbspKOSZYKA&nbsp|&nbsp&times;</button>\
             </div>\
         </div>'
 
