@@ -1,7 +1,3 @@
-let displayedHero = null;
-basketValue = null;
-basketContent = null
-const heroModal = document.querySelector('#heroModal');
 let heroes = [
     {
         name: 'Superman',
@@ -47,12 +43,13 @@ let heroes = [
     }
 ]
 
+const hamburger = document.querySelector("#hamburgerMenu");
 const openNav = () => {
-    document.querySelector("#hamburgerMenu").style.width = "100%";
+    hamburger.style.width = "100%";
 }
 
 const closeNav = () => {
-    document.querySelector("#hamburgerMenu").style.width = "0";
+    hamburger.style.width = "0";
 }
 
 const displayHeroes = () => {
@@ -68,18 +65,58 @@ const displayHeroes = () => {
         </div>';
     }
 
+    const heroModal = document.querySelector('#heroModal');
     for (let i = 0; i < heroes.length; i++) {
-        document.getElementById(heroes[i].name).onclick = () => {
-            displayedHero = heroes[i];
-            openHeroModal();
+        document.querySelector('#' + heroes[i].name).onclick = () => {
+            heroModal.innerHTML =
+                '<div class="modal__content">\
+                    <img src="'+ heroes[i].image + '" class="modal__pic">\
+                    <div class="modal__infoContainer">\
+                        <div>\
+                            <div class="modal__title">\
+                                '+ heroes[i].name + '\
+                            </div>\
+                            <div class="modal__titleBorder"></div>\
+                            <div class="modal__description">\
+                                '+ heroes[i].description + '\
+                            </div>\
+                            <div class="modal__price">\
+                                WYNAJEM: '+ heroes[i].price + ' ZŁ/H\
+                            </div>\
+                        </div>\
+                        <div>\
+                            <button class="modal__button">DODAJ&nbspDO&nbspKOSZYKA</button>\
+                        </div>\
+                    </div>\
+                    <img src="./images/close.png" alt="close" class="modal__close"/>\
+                </div>';
+
             heroModal.style.display = "block";
+
+            const closeButton = document.querySelector(".modal__close");
+            closeButton.onclick = () => {
+                heroModal.style.display = "none";
+            }
+
+            window.onclick = (event) => {
+                if (event.target === heroModal) {
+                    heroModal.style.display = "none";
+                }
+            }
+
+            const addToBasketButton = document.querySelector(".modal__button");
+            addToBasketButton.onclick = () => {
+                addToBasket();
+                heroModal.style.display = "none";
+            }
         }
     }
 };
 
 const openHeroModal = () => {
+    const heroModal = document.querySelector('#heroModal');
 
-    document.querySelector("#heroModal").innerHTML =
+    heroModal.innerHTML =
         '<div class="modal__content">\
             <img src="'+ displayedHero.image + '" class="modal__pic">\
             <div class="modal__infoContainer">\
@@ -102,11 +139,13 @@ const openHeroModal = () => {
             <img src="./images/close.png" alt="close" class="modal__close"/>\
         </div>';
 
-   
+    heroModal.style.display = "block";
+
     const closeButton = document.querySelector(".modal__close");
     closeButton.onclick = () => {
         heroModal.style.display = "none";
     }
+
     window.onclick = (event) => {
         if (event.target === heroModal) {
             heroModal.style.display = "none";
@@ -116,6 +155,7 @@ const openHeroModal = () => {
     const addToBasketButton = document.querySelector(".modal__button");
     addToBasketButton.onclick = () => {
         addToBasket();
+        heroModal.style.display = "none";
     }
 };
 
@@ -227,11 +267,21 @@ heroesToSelect = function () {
         });
 }
 
-addToBasket = function () {
+let basketValue = 0;
+const basketValueDisplay = document.querySelector("#basketValue");
 
-    if (displayedHero.isAvailable == true) {
+addToBasket = () => {
+    const displayedHeroName = document.querySelector(".modal__title").innerText;
+    let displayedHero;
+
+    for (let i = 0; i < heroes.length; i++) {
+        if (displayedHeroName == heroes[i].name)
+            displayedHero = heroes[i]
+    }
+
+    if (displayedHero.isAvailable === true) {
         document.querySelector(".basket__content").innerHTML +=
-        '<div id="' + displayedHero.name + '" class="basket__item">\
+            '<div id="basket' + displayedHero.name + '" class="basket__item">\
             <img class="basket__picSide" src="'+ displayedHero.image + '">\
             <div class="basket__textSide">\
                 <div>\
@@ -247,75 +297,33 @@ addToBasket = function () {
         </div>'
 
         displayedHero.isAvailable = false;
+
         basketValue = parseInt(displayedHero.price) + basketValue
-        console.log(displayedHero.name + " " + displayedHero.isAvailable)
-        console.log(basketValue)
-        document.getElementById("basketValue").innerHTML = basketValue + " zł"
+
+        basketValueDisplay.innerHTML = basketValue + " zł"
+
         localStorage.setItem("basketValue", basketValue);
-        localStorage.setItem(displayedHero.name, displayedHero)
+        localStorage.setItem(displayedHero.name, displayedHero.price)
     }
     else {
         alert("Nie można dodać do koszyka");
     }
-    heroModal.style.display = "none";
 
-    if (document.getElementById("basket__itemButtonSuperman"))
-        document.getElementById("basket__itemButtonSuperman").onclick = function () {
-            let elem = document.querySelector('#Superman');
-            elem.parentNode.removeChild(elem);
-            superman.isAvailable = true;
-            basketValue = basketValue - parseInt(superman.price)
-            document.getElementById("basketValue").innerHTML = basketValue + " zł"
-            localStorage.setItem("basketValue", basketValue);
-            localStorage.removeItem(superman.name)
-        }
-    if (document.getElementById("basket__itemButtonHulk"))
-        document.getElementById("basket__itemButtonHulk").onclick = function () {
-            let elem = document.querySelector('#Hulk');
-            elem.parentNode.removeChild(elem);
-            hulk.isAvailable = true;
-            basketValue = basketValue - parseInt(hulk.price)
-            document.getElementById("basketValue").innerHTML = basketValue + " zł"
-            localStorage.setItem("basketValue", basketValue);
-            localStorage.removeItem(hulk.name)
-        }
-    if (document.getElementById("basket__itemButtonThor"))
-        document.getElementById("basket__itemButtonThor").onclick = function () {
-            let elem = document.querySelector('#Thor');
-            elem.parentNode.removeChild(elem);
-            thor.isAvailable = true;
-            basketValue = basketValue - parseInt(thor.price)
-            document.getElementById("basketValue").innerHTML = basketValue + " zł"
-            localStorage.setItem("basketValue", basketValue);
-            localStorage.removeItem(thor.name)
-        }
-    if (document.getElementById("basket__itemButtonIronman"))
-        document.getElementById("basket__itemButtonIronman").onclick = function () {
-            let elem = document.querySelector('#Ironman');
-            elem.parentNode.removeChild(elem);
-            ironman.isAvailable = true;
-            basketValue = basketValue - parseInt(ironman.price)
-            document.getElementById("basketValue").innerHTML = basketValue + " zł"
-            localStorage.setItem("basketValue", basketValue);
-            localStorage.removeItem(ironman.name)
-        }
-    if (document.getElementById("basket__itemButtonPotter"))
-        document.getElementById("basket__itemButtonPotter").onclick = function () {
-            let elem = document.querySelector('#Potter');
-            elem.parentNode.removeChild(elem);
-            potter.isAvailable = true;
-            basketValue = basketValue - parseInt(potter.price)
-            document.getElementById("basketValue").innerHTML = basketValue + " zł"
-            localStorage.setItem("basketValue", basketValue);
-            localStorage.removeItem(potter.name)
-        }
-    if (document.getElementById("basket__itemButtonBatman"))
-        document.getElementById("basket__itemButtonBatman").onclick = function () {
-            let elem = document.querySelector('#Batman');
-            elem.parentNode.removeChild(elem);
-            batman.isAvailable = true;
-            basketValue = basketValue - parseInt(batman.price)
-            localStorage.setItem("basketValue", basketValue);
-            localStorage.removeItem(batman.name)
-        }
-};
+    removeFromBasket()
+}
+
+const removeFromBasket = () => {
+    for (let i = 0; i < heroes.length; i++) {
+        if (document.querySelector('#basket__itemButton' + heroes[i].name))
+            document.querySelector('#basket__itemButton' + heroes[i].name).onclick = () => {
+
+                document.querySelector('#basket' + heroes[i].name).remove();
+                heroes[i].isAvailable = true;
+                basketValue = basketValue - parseInt(heroes[i].price)
+                basketValueDisplay.innerHTML = basketValue + " zł"
+
+                localStorage.setItem("basketValue", basketValue);
+                localStorage.removeItem(heroes[i].name)
+            }
+    }
+}
