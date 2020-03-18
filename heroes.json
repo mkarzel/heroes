@@ -1,14 +1,3 @@
 {
-  "heroes": [
-    {
-      "name": "asdad",
-      "image": "aaaaa",
-      "price": "sssssss"
-    },
-    {
-      "name": "asdadfdasfas",
-      "image": "sadas",
-      "price": "dasdsad"
-    }
-  ]
+  "heroes": []
 }

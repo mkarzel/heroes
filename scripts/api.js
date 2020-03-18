@@ -1,109 +1,116 @@
+const clearDB = async () => {
+    try {
+        console.log("cleardb")
+        const url = 'http://localhost:3000/heroes'
 
-clearDB = function () {
-    console.log("cleardb")
-    return fetch("http://localhost:3000/heroes", {
-        method: 'delete'
-    }).then(response =>
-        response.json().then(json => {
-            return json;
-        })
-    );
+        await fetch(url, {
+            method: 'DELETE'
+        });
+        // return await response.json();
+    }
+    catch (error) {
+        throw Error(error)
+    }
 }
 
-deleteHeroFromDB = function () {
-    console.log("deleteHeroFromDB")
-    const url = 'http://localhost:3000/heroes/' + document.getElementById("heroName").value;
-    return fetch(url, {
-        method: 'delete'
-    }).then(response =>
-        response.json().then(json => {
-            return json;
-        })
-    );
+const deleteHeroFromDB = async () => {
+    try {
+        console.log("deleteHeroFromDB")
+        const url = 'http://localhost:3000/heroes/' + document.querySelector("#heroesSelect").value;
+
+        await fetch(url, {
+            method: 'DELETE'
+        });
+    }
+    catch (error) {
+        throw Error(error)
+    }
 }
 
-addHeroToDB = function () {
-    console.log("addHeroDB")
-    const url = 'http://localhost:3000/heroes';
-    const data = {
-        name: document.getElementById("heroName").value,
-        image: document.getElementById("heroPic").value,
-        price: document.getElementById("heroPrice").value
-    };
+const loadHeroes = async () => {
+    try {
+        console.log("loadHeroes")
+        const url = 'http://localhost:3000/heroes';
 
-    fetch(url, {
-        method: 'POST', // or 'PUT'
-        body: JSON.stringify(data), // data can be `string` or {object}!
-        headers: {
-            'Content-Type': 'application/json'
+        const response = await fetch(url);
+        const heroesToLoad = await response.json();
+
+        for (i = 0; i < heroesToLoad.length; i++) {
+            document.querySelector("#heroes").innerHTML +=
+                '<div class="hero">\
+            <img class="hero__image" src="'+ heroesToLoad[i].image + '" id="' + heroesToLoad[i].name + '">\
+            <p class="thick">'+ heroesToLoad[i].name + '</p>\
+            <p class="normal">Cena wynajmu '+ heroesToLoad[i].price + ' zł/h</p>\
+        </div>'
         }
-    }).then(res => res.json())
+    }
+    catch (error) {
+        throw Error(error)
+    }
 }
 
-editHeroInDB = function () {
-    console.log("editHeroDB")
-    const url = 'http://localhost:3000/heroes/' + document.getElementById("heroName").value;
-
-    const data = {
-        name: document.getElementById("heroName").value,
-        image: document.getElementById("heroPic").value,
-        price: document.getElementById("heroPrice").value
-    };
-
-    fetch(url, {
-        method: 'PUT', // or 'PUT'
-        body: JSON.stringify(data), // data can be `string` or {object}!
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    }).then(response => response.json())
-        .catch(error => console.error('Error:', error))
-        .then(response => console.log('Success:', JSON.stringify(response)));
-}
-
-loadHeroes = function () {
-
-    console.log("loadHeroes")
-    const url = 'http://localhost:3000/heroes';
-
-    fetch(url)
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (myJson) {
-            // console.log(JSON.stringify(myJson));
-            // console.log(myJson.length)
-            for (i = 0; i < myJson.length; i++) {
-                document.getElementById("heroes").innerHTML +=
-                    '<div class="hero">\
-                <img class="hero__image" src="'+ myJson[i].image + '" id="superman">\
-                <p class="thick">'+ myJson[i].name + '</p>\
-                <p class="normal">Cena wynajmu '+ myJson[i].price + ' zł/h</p>\
-            </div>\
-            '
+const addHeroToDB = async () => {
+    try {
+        console.log("addHeroDB")
+        const url = 'http://localhost:3000/heroes';
+        const data = {
+            name: document.getElementById("heroName").value,
+            image: document.getElementById("heroPic").value,
+            price: document.getElementById("heroPrice").value
+        };
+        await fetch(url, {
+            method: 'POST', // or 'PUT'
+            body: JSON.stringify(data), // data can be `string` or {object}!
+            headers: {
+                'Content-Type': 'application/json'
             }
         });
+    }
+    catch (error) {
+        throw Error(error)
+    }
 }
 
-heroesToSelect = function () {
-    console.log("heroesToSelect")
-    const url = 'http://localhost:3000/heroes';
+const editHeroInDB = async () => {
+    try {
+        console.log("editHeroDB")
+        const url = 'http://localhost:3000/heroes/' + document.querySelector("#heroesSelect").value;
+        const data = {
+            name: document.querySelector("#heroesSelect").value,
+            image: document.getElementById("heroPic").value,
+            price: document.getElementById("heroPrice").value,
+        };
+        await fetch(url, {
+            method: 'PUT',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+    }
+    catch (error) {
+        throw Error(error)
+    }
+}
 
-    fetch(url)
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (myJson) {
-            // console.log(JSON.stringify(myJson));
-            // console.log(myJson.length)
-            document.getElementById("heroesSelect").innerHTML = ''
-            for (i = 0; i < myJson.length; i++) {
-                document.getElementById("heroesSelect").innerHTML +=
-                    '<option id="heroName">\
-                '+ myJson[i].name + '\
+const heroesToSelect = async () => {
+    try {
+        console.log("heroesToSelect")
+        const url = 'http://localhost:3000/heroes';
+
+        const response = await fetch(url);
+        const heroesToEdit = await response.json();
+
+        for (i = 0; i < heroesToEdit.length; i++) {
+            document.getElementById("heroesSelect").innerHTML +=
+                '<option id="heroName">\
+                '+ heroesToEdit[i].name + '\
             </option>\
             '
-            }
-        });
+        }
+    }
+    catch (error) {
+        throw Error(error)
+    }
 }
 
