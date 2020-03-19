@@ -19,15 +19,15 @@
                     </a>
                 </div>
                 <div class="header__menu">
-                    <div><a href="addHero.html">DODAJ&nbspHEROSA</a></div>
+                    <a href="addHero.html">DODAJ&nbspHEROSA</a>
                     <div>&nbsp</div>
-                    <div><a href="editHero.html">EDYTUJ&nbspHEROSA</a></div>
+                    <a href="editHero.html">EDYTUJ&nbspHEROSA</a>
                     <div>&nbsp</div>
-                    <div><a href="deleteHero.html">USUŃ&nbspHEROSA</a></div>
+                    <a href="deleteHero.html">USUŃ&nbspHEROSA</a>
                     <div>&nbsp</div>
-                    <div><a href="index.html" onclick='clearDB()'>WYCZYŚĆ&nbspBAZĘ</a></div>
+                    <a onclick='deleteAllHeroes()'>WYCZYŚĆ&nbspBAZĘ</a>
                     <div>&nbsp</div>
-                    <div><a href="index.html" onclick="loadHeroes()">WCZYTAJ&nbspHEROSÓW</a></div>
+                    <a onclick="loadHeroes()">WCZYTAJ&nbspHEROSÓW</a>
                 </div>
                 <div>
                     <img src="./images/hamburger.svg.png" alt="hamburger" class="header__hamburger"
@@ -41,8 +41,8 @@
                     <a href="addHero.html">DODAJ&nbspHEROSA</a>
                     <a href="editHero.html">EDYTUJ&nbspHEROSA</a>
                     <a href="deleteHero.html">USUŃ&nbspHEROSA</a>
-                    <a href="index.html" onclick='clearDB()'>WYCZYŚĆ&nbspBAZĘ</a>
-                    <a href="index.html" onclick="loadHeroes()">WCZYTAJ&nbspHEROSÓW</a>
+                    <a onclick="deleteAllHeroes(); closeNav()">WYCZYŚĆ&nbspBAZĘ</a>
+                    <a onclick="loadHeroes(); closeNav()">WCZYTAJ&nbspHEROSÓW</a>
                 </div>
             </div>
         </div>
@@ -60,10 +60,10 @@
                 <input class="form__input" type="text" id="heroPrice" placeholder="CENA WYNAJMU /H">
             </div>
             <div>
-                <input class="form__input" type="text" placeholder="OPIS BOHATERA">
+                <input class="form__input" type="text" id="heroDescription" placeholder="OPIS BOHATERA">
             </div>
             <div>
-                <button class="form__button" onclick="addHeroToDB()">Submit</button>
+                <button class="form__button" onclick="postHero()">Submit</button>
             </div>
         </div>
         <div class="footer">
