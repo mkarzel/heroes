@@ -21,21 +21,22 @@ const deleteHeroes = async (url) => {
     }
 }
 
-const clearDB = async () => {
+const deleteAllHeroes = async () => {
     deleteHeroes(api)
 }
 
 const deleteHero = async () => {
-    deleteHeroes(api + document.querySelector("#heroesSelect").value)
+    const url = api + document.querySelector("#heroesSelect").value;
+    deleteHeroes(url)
 }
 
 const postHero = async () => {
     try {
         const data = {
-            name: document.getElementById("heroName").value,
-            image: document.getElementById("heroPic").value,
-            price: document.getElementById("heroPrice").value,
-            description: document.getElementById("heroDescription").value,
+            name: document.querySelector("#heroName").value,
+            description: document.querySelector("#heroDescription").value,
+            image: document.querySelector("#heroPic").value,
+            price: document.querySelector("#heroPrice").value,
             isAvailable: true,
         };
 
@@ -55,10 +56,10 @@ const postHero = async () => {
 const putHero = async () => {
     try {
         const data = {
-            name: document.getElementById("heroName").value,
-            image: document.getElementById("heroPic").value,
-            price: document.getElementById("heroPrice").value,
-            description: document.getElementById("heroDescription").value,
+            name: document.querySelector("#heroesSelect").value,
+            description: document.querySelector("#heroDescription").value,
+            image: document.querySelector("#heroPic").value,
+            price: document.querySelector("#heroPrice").value,
             isAvailable: true,
         };
 
@@ -81,7 +82,7 @@ const heroesToSelect = async () => {
     const heroesInDB = await getHeroes();
 
     for (i = 0; i < heroesInDB.length; i++) {
-        document.getElementById("heroesSelect").innerHTML +=
+        document.querySelector("#heroesSelect").innerHTML +=
             '<option id="heroName">\
             '+ heroesInDB[i].name + '\
         </option>\
