@@ -1,8 +1,8 @@
 const api = 'http://localhost:3000/heroes/'
 
-const getHeroes = async () => {
+const getHero = async (url) => {
     try {
-        const response = await fetch(api);
+        const response = await fetch(url);
         return await response.json();
     }
     catch (error) {
@@ -75,30 +75,5 @@ const putHero = async () => {
     }
     catch (error) {
         throw Error(error)
-    }
-}
-
-const heroesToSelect = async () => {
-    const heroesInDB = await getHeroes();
-
-    for (i = 0; i < heroesInDB.length; i++) {
-        document.querySelector("#heroesSelect").innerHTML +=
-            '<option id="heroName">\
-            '+ heroesInDB[i].name + '\
-        </option>\
-        '
-    }
-}
-
-const loadHeroes = async () => {
-    const heroesInDB = await getHeroes();
-
-    for (i = 0; i < heroesInDB.length; i++) {
-        document.querySelector("#heroes").innerHTML +=
-            '<div class="hero">\
-            <img class="hero__image" src="'+ heroesInDB[i].image + '" id="' + heroesInDB[i].name + '">\
-            <p class="thick">'+ heroesInDB[i].name + '</p>\
-            <p class="normal">Cena wynajmu '+ heroesInDB[i].price + ' zł/h</p>\
-        </div>'
     }
 }
