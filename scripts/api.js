@@ -30,16 +30,20 @@ const deleteHero = async () => {
     deleteHeroes(url)
 }
 
-const postHero = async () => {
-    try {
-        const data = {
-            name: document.querySelector("#heroName").value,
-            description: document.querySelector("#heroDescription").value,
-            image: document.querySelector("#heroPic").value,
-            price: document.querySelector("#heroPrice").value,
-            isAvailable: true,
-        };
+const addHero = async () => {
+    const data = {
+        name: document.querySelector("#heroName").value,
+        description: document.querySelector("#heroDescription").value,
+        image: document.querySelector("#heroPic").value,
+        price: document.querySelector("#heroPrice").value,
+        isAvailable: true,
+    };
 
+    await postHero(data)
+}
+
+const postHero = async (data) => {
+    try {
         await fetch(api, {
             method: 'POST', 
             body: JSON.stringify(data), 
@@ -53,18 +57,21 @@ const postHero = async () => {
     }
 }
 
-const putHero = async () => {
+const editHero = async () => {
+    const data = {
+        name: document.querySelector("#heroesSelect").value,
+        description: document.querySelector("#heroDescription").value,
+        image: document.querySelector("#heroPic").value,
+        price: document.querySelector("#heroPrice").value,
+        isAvailable: true,
+    };
+    const url = api + document.querySelector("#heroesSelect").value;
+
+    await putHero(data, url)
+}
+
+const putHero = async (data, url) => {
     try {
-        const data = {
-            name: document.querySelector("#heroesSelect").value,
-            description: document.querySelector("#heroDescription").value,
-            image: document.querySelector("#heroPic").value,
-            price: document.querySelector("#heroPrice").value,
-            isAvailable: true,
-        };
-
-        const url = api + document.querySelector("#heroesSelect").value;
-
         await fetch(url, {
             method: 'PUT',
             body: JSON.stringify(data),
