@@ -1,15 +1,3 @@
-const heroesToSelect = async () => {
-    const heroes = await getHero(api);
-
-    for (i = 0; i < heroes.length; i++) {
-        document.querySelector("#heroesSelect").innerHTML +=
-            '<option id="heroName">\
-            '+ heroes[i].name + '\
-        </option>\
-        '
-    }
-}
-
 const loadHeroes = async () => {
     localStorage.clear();
     const heroes = await getHero(api);
@@ -29,6 +17,10 @@ const loadHeroes = async () => {
             loadHeroModal(images[i].id)
         }
     }
+}
+
+window.onload = async () => {
+    await loadHeroes()
 }
 
 const loadHeroModal = async (id) => {

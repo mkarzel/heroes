@@ -9,7 +9,7 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
 </head>
 
-<body onload="heroesToSelect()">
+<body>
     <div class="formPageContainer">
         <div class="header--form">
             <div class="header">
@@ -18,6 +18,19 @@
                         <img class="header__logo" alt="logo" src="./images/logo.png">
                     </a>
                 </div>
+                <div>
+                    <img src="./images/hamburger.svg.png" alt="hamburger" class="header__hamburger" />
+                </div>
+                <div id="hamburgerMenu" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn">&times;</a>
+                    <a href=" index.html">
+                        <img class="header__logo" src="./images/logo.png">
+                    </a>
+                    <a href="addHero.html">DODAJ&nbspHEROSA</a>
+                    <a href="editHero.html">EDYTUJ&nbspHEROSA</a>
+                    <a href="deleteHero.html">USUŃ&nbspHEROSA</a>
+                    <a href="index.html" id="hamburgerClearDB">WYCZYŚĆ&nbspBAZĘ</a>
+                </div>
                 <div class="header__menu">
                     <a href="addHero.html">DODAJ&nbspHEROSA</a>
                     <div>&nbsp</div>
@@ -25,24 +38,7 @@
                     <div>&nbsp</div>
                     <a href="deleteHero.html">USUŃ&nbspHEROSA</a>
                     <div>&nbsp</div>
-                    <a onclick='deleteAllHeroes()'>WYCZYŚĆ&nbspBAZĘ</a>
-                    <div>&nbsp</div>
-                    <a onclick="loadHeroes()">WCZYTAJ&nbspHEROSÓW</a>
-                </div>
-                <div>
-                    <img src="./images/hamburger.svg.png" alt="hamburger" class="header__hamburger"
-                        onclick="openNav()" />
-                </div>
-                <div id="hamburgerMenu" class="sidenav">
-                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                    <a href="index.html">
-                        <img class="header__logo" src="./images/logo.png">
-                    </a>
-                    <a href="addHero.html">DODAJ&nbspHEROSA</a>
-                    <a href="editHero.html">EDYTUJ&nbspHEROSA</a>
-                    <a href="deleteHero.html">USUŃ&nbspHEROSA</a>
-                    <a onclick="deleteAllHeroes(); closeNav()">WYCZYŚĆ&nbspBAZĘ</a>
-                    <a onclick="loadHeroes(); closeNav()">WCZYTAJ&nbspHEROSÓW</a>
+                    <a href="index.html" id="clearDB">WYCZYŚĆ&nbspBAZĘ</a>
                 </div>
             </div>
         </div>
@@ -64,7 +60,7 @@
                 <input class="form__input" type="text" id="heroDescription" placeholder="OPIS BOHATERA">
             </div>
             <div>
-                <button class="form__button" onclick="editHero()">Submit</button>
+                <button class="form__button" id="editHeroSubmit">Submit</button>
             </div>
         </div>
         <div class="footer">
@@ -74,7 +70,7 @@
 
     <script src="./scripts/api.js"></script>
     <script src="./scripts/hamburger.js"></script>
-    <script src="./scripts/displayHeroes.js"></script>
+    <script src="./scripts/form.js"></script>
 </body>
 
 </html>
