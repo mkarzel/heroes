@@ -1,33 +1,47 @@
-const displayHeroes = () => {
-
+const loadHeroes = async () => {
     localStorage.clear();
+    const heroes = await getHero(api);
 
-    for (let i = 0; i < heroes.length; i++) {
+    for (i = 0; i < heroes.length; i++) {
         document.querySelector("#heroes").innerHTML +=
             '<div class="hero">\
             <img class="hero__image" src="'+ heroes[i].image + '" id="' + heroes[i].name + '">\
             <p class="thick">'+ heroes[i].name + '</p>\
             <p class="normal">Cena wynajmu '+ heroes[i].price + ' zł/h</p>\
-        </div>';
+        </div>'
     }
 
-    const heroModal = document.querySelector('#heroModal');
-    for (let i = 0; i < heroes.length; i++) {
-        document.querySelector('#' + heroes[i].name).onclick = () => {
-            heroModal.innerHTML =
-                '<div class="modal__content">\
-                    <img src="'+ heroes[i].image + '" class="modal__pic">\
+    const images = document.querySelectorAll('.hero__image')
+    for (let i = 0; i < images.length; i++) {
+        images[i].onclick = () => {
+            loadHeroModal(images[i].id)
+        }
+    }
+}
+
+window.onload = async () => {
+    await loadHeroes()
+}
+
+const loadHeroModal = async (id) => {
+
+    const hero = await getHero(api + id);
+    const heroModal = document.querySelector('.modal');
+
+    heroModal.innerHTML =
+        '<div class="modal__content">\
+                    <img src="'+ hero.image + '" class="modal__pic">\
                     <div class="modal__infoContainer">\
                         <div>\
                             <div class="modal__title">\
-                                '+ heroes[i].name + '\
+                                '+ hero.name + '\
                             </div>\
                             <div class="modal__titleBorder"></div>\
                             <div class="modal__description">\
-                                '+ heroes[i].description + '\
+                                '+ hero.description + '\
                             </div>\
                             <div class="modal__price">\
-                                WYNAJEM: '+ heroes[i].price + ' ZŁ/H\
+                                WYNAJEM: '+ hero.price + ' ZŁ/H\
                             </div>\
                         </div>\
                         <div>\
@@ -37,24 +51,22 @@ const displayHeroes = () => {
                     <img src="./images/close.png" alt="close" class="modal__close"/>\
                 </div>';
 
-            heroModal.style.display = "block";
+    heroModal.style.display = "block";
 
-            const closeButton = document.querySelector(".modal__close");
-            closeButton.onclick = () => {
-                heroModal.style.display = "none";
-            }
+    const closeButton = document.querySelector(".modal__close");
+    closeButton.onclick = () => {
+        heroModal.style.display = "none";
+    }
 
-            window.onclick = (event) => {
-                if (event.target === heroModal) {
-                    heroModal.style.display = "none";
-                }
-            }
-
-            const addToBasketButton = document.querySelector(".modal__button");
-            addToBasketButton.onclick = () => {
-                addToBasket();
-                heroModal.style.display = "none";
-            }
+    window.onclick = (event) => {
+        if (event.target === heroModal) {
+            heroModal.style.display = "none";
         }
     }
-};
+
+    const addToBasketButton = document.querySelector(".modal__button");
+    addToBasketButton.onclick = () => {
+        addToBasket();
+        heroModal.style.display = "none";
+    }
+}

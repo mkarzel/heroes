@@ -1,16 +1,11 @@
 let basketValue = 0;
 const basketValueDisplay = document.querySelector("#basketValue");
 
-addToBasket = () => {
+addToBasket = async () => {
     const displayedHeroName = document.querySelector(".modal__title").innerText;
-    let displayedHero;
+    const displayedHero = await getHero(api + displayedHeroName);
 
-    for (let i = 0; i < heroes.length; i++) {
-        if (displayedHeroName == heroes[i].name)
-            displayedHero = heroes[i]
-    }
-
-    if (displayedHero.isAvailable === true) {
+    if (displayedHero.isAvailable === true && !document.querySelector('#basket' + displayedHero.name)) {
         document.querySelector(".basket__content").innerHTML +=
             '<div id="basket' + displayedHero.name + '" class="basket__item">\
             <img class="basket__picSide" src="'+ displayedHero.image + '">\
@@ -27,8 +22,6 @@ addToBasket = () => {
             </div>\
         </div>'
 
-        displayedHero.isAvailable = false;
-
         basketValue = parseInt(displayedHero.price) + basketValue
 
         basketValueDisplay.innerHTML = basketValue + " zł"
@@ -40,16 +33,18 @@ addToBasket = () => {
         alert("Nie można dodać do koszyka");
     }
 
-    removeFromBasket()
+    await removeFromBasket()
 }
 
-const removeFromBasket = () => {
+const removeFromBasket = async () => {
+
+    const heroes = await getHero(api);
+
     for (let i = 0; i < heroes.length; i++) {
         if (document.querySelector('#basket__itemButton' + heroes[i].name))
             document.querySelector('#basket__itemButton' + heroes[i].name).onclick = () => {
 
                 document.querySelector('#basket' + heroes[i].name).remove();
-                heroes[i].isAvailable = true;
                 basketValue = basketValue - parseInt(heroes[i].price)
                 basketValueDisplay.innerHTML = basketValue + " zł"
 
