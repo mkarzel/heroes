@@ -26,7 +26,7 @@
       "description": "Hero description lorem....",
       "image": "./images/ironman.jpg",
       "price": "75000",
-      "isAvailable": true
+      "isAvailable": false
     },
     {
       "name": "Potter",

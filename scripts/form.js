@@ -2,11 +2,10 @@ const heroesToSelect = async () => {
     const heroes = await getHero(api);
 
     for (i = 0; i < heroes.length; i++) {
-        document.querySelector("#heroesSelect").innerHTML +=
-            '<option id="heroName">\
-            '+ heroes[i].name + '\
-        </option>\
-        '
+        const newOption = document.createElement("option")
+        newOption.setAttribute("id","heroName")
+        document.querySelector("#heroesSelect").appendChild(newOption)
+        newOption.innerText = heroes[i].name
     }
 }
 
