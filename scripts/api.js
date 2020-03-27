@@ -31,12 +31,17 @@ const deleteHero = async () => {
 }
 
 const addHero = async () => {
+    if (document.querySelector("#heroAvailability").value === "true"){
+        availability = true;
+    } else {
+        availability = false;
+    }
     const data = {
         name: document.querySelector("#heroName").value,
         description: document.querySelector("#heroDescription").value,
         image: document.querySelector("#heroPic").value,
         price: document.querySelector("#heroPrice").value,
-        isAvailable: true,
+        isAvailable: availability
     };
 
     await postHero(data)
@@ -58,12 +63,18 @@ const postHero = async (data) => {
 }
 
 const editHero = async () => {
+    if (document.querySelector("#heroAvailability").value === "true"){
+        availability = true;
+    } else {
+        availability = false;
+    }
+    
     const data = {
         name: document.querySelector("#heroesSelect").value,
         description: document.querySelector("#heroDescription").value,
         image: document.querySelector("#heroPic").value,
         price: document.querySelector("#heroPrice").value,
-        isAvailable: true,
+        isAvailable: availability
     };
     const url = api + document.querySelector("#heroesSelect").value;
 

@@ -43,22 +43,15 @@
             <div class="form__header">
                 EDYTUJ HEROSA
             </div>
-            <div>
-                <select class="form__select" id="heroesSelect">
-                </select>
-            </div>
-            <div>
-                <input class="form__input" type="text" id="heroPic" placeholder="ADRES/NAZWA ZDJĘCIA">
-            </div>
-            <div>
-                <input class="form__input" type="text" id="heroPrice" placeholder="CENA WYNAJMU /H">
-            </div>
-            <div>
-                <input class="form__input" type="text" id="heroDescription" placeholder="OPIS BOHATERA">
-            </div>
-            <div>
-                <button class="form__button" id="editHeroSubmit">Submit</button>
-            </div>
+            <select class="form__select" id="heroesSelect"></select>
+            <input class="form__input" type="text" id="heroPic" placeholder="ADRES/NAZWA ZDJĘCIA">
+            <input class="form__input" type="text" id="heroPrice" placeholder="CENA WYNAJMU /H">
+            <input class="form__input" type="text" id="heroDescription" placeholder="OPIS BOHATERA">
+            <select class="form__select" id="heroAvailability">
+                <option value="true">DOSTĘPNY</option>
+                <option value="false">NIEDOSTĘPNY</option>
+            </select>
+            <button class="form__button" id="editHeroSubmit">Submit</button>
         </div>
         <div class="footer">
             <p>Need a Hero - Pure JS/CSS Aplikacja do ćwiczenia nabytej wiedzy o JavaScript</p>
