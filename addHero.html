@@ -33,11 +33,8 @@
                 </div>
                 <div class="header__menu">
                     <a href="addHero.html">DODAJ&nbspHEROSA</a>
-                    <div>&nbsp</div>
                     <a href="editHero.html">EDYTUJ&nbspHEROSA</a>
-                    <div>&nbsp</div>
                     <a href="deleteHero.html">USUŃ&nbspHEROSA</a>
-                    <div>&nbsp</div>
                     <a href="index.html" id="clearDB">WYCZYŚĆ&nbspBAZĘ</a>
                 </div>
             </div>
@@ -46,21 +43,15 @@
             <div class="form__header">
                 DODAJ HEROSA
             </div>
-            <div>
-                <input class="form__input" type="text" id="heroName" placeholder="NAZWA BOHATERA">
-            </div>
-            <div>
-                <input class="form__input" type="text" id="heroPic" placeholder="ADRES/NAZWA ZDJĘCIA">
-            </div>
-            <div>
-                <input class="form__input" type="text" id="heroPrice" placeholder="CENA WYNAJMU /H">
-            </div>
-            <div>
-                <input class="form__input" type="text" id="heroDescription" placeholder="OPIS BOHATERA">
-            </div>
-            <div>
-                <button class="form__button" id="addHeroSubmit">Submit</button>
-            </div>
+            <input class="form__input" type="text" id="heroName" placeholder="NAZWA BOHATERA">
+            <input class="form__input" type="text" id="heroPic" placeholder="ADRES/NAZWA ZDJĘCIA">
+            <input class="form__input" type="text" id="heroPrice" placeholder="CENA WYNAJMU /H">
+            <input class="form__input" type="text" id="heroDescription" placeholder="OPIS BOHATERA">
+            <select class="form__select" id="heroAvailability">
+                <option value=true>DOSTĘPNY</option>
+                <option value=false>NIEDOSTĘPNY</option>
+            </select>
+            <button class="form__button" id="addHeroSubmit">Submit</button>
         </div>
         <div class="footer">
             <p>Need a Hero - Pure JS/CSS Aplikacja do ćwiczenia nabytej wiedzy o JavaScript</p>
@@ -69,6 +60,7 @@
 
     <script src="./scripts/api.js"></script>
     <script src="./scripts/hamburger.js"></script>
+    <script src="./scripts/form.js"></script>
 </body>
 
 </html>
