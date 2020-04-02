@@ -10,8 +10,9 @@ const heroesToSelect = async () => {
 }
 
 window.onload = async () => {
-    if(document.querySelector("#heroesSelect"))
-    await heroesToSelect()
+    if(document.querySelector("#heroesSelect")){
+        await heroesToSelect()
+    }   
 }
 
 if (document.querySelector("#deleteHeroSubmit"))

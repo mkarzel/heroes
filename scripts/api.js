@@ -1,8 +1,10 @@
 const api = 'http://localhost:3000/heroes/'
+const loader = document.querySelector(".loader");
 
 const getHero = async (url) => {
     try {
         const response = await fetch(url);
+        loader.style.display = "none";
         return await response.json();
     }
     catch (error) {
