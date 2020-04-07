@@ -9,12 +9,10 @@ const closeNav = () => {
 
 document.querySelector(".header__hamburger").addEventListener("click", () => {
     openNav();
-    console.log('open')
 })
 
 document.querySelector(".closebtn").addEventListener("click", () => {
     closeNav();
-    console.log('close')
 })
 
 document.querySelector("#clearDB").addEventListener("click", () => {
