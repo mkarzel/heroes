@@ -9,5 +9,5 @@ How to run app:
 
 How to run server:
 
-- Install NodeJS and npm
+- Install Node.js and npm
 - Open terminal in the project folder and type "npm i" to install dependencies and "npm start" to start server.
